@@ -1,21 +1,71 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ImageOff } from "lucide-react";
+import Image, { type StaticImageData } from "next/image";
 import HorizonCanvas from "@/components/marketing/HorizonCanvas";
 import Reveal from "@/components/marketing/Reveal";
+import portfolioEcommerce from "@/public/images/portfolio-ecommerce.png";
+import serviceDashboard from "@/public/images/service-dashboard.png";
+import serviceCybersecurite from "@/public/images/service-cybersecurite.png";
+import serviceIa from "@/public/images/service-ia.png";
+import serviceCloud from "@/public/images/service-cloud.png";
+import serviceMobile from "@/public/images/service-mobile.png";
 
 export const metadata: Metadata = {
   title: "Portfolio — NGUERA SENEGALENSIS TECH",
-  description: "Nos réalisations — cette page est en cours de constitution.",
+  description: "Projets de démonstration illustrant notre approche — pas des références clients.",
 };
 
-const PLACEHOLDER_SLOTS = [
-  "Site web / plateforme",
-  "Application mobile",
-  "Logiciel SaaS",
-  "Dashboard & analytics",
-  "Intégration IA",
-  "Identité de marque",
+type DemoProject = {
+  badge: "Projet Démonstration" | "Concept";
+  title: string;
+  desc: string;
+  tags: string[];
+  image: StaticImageData;
+};
+
+const PROJECTS: DemoProject[] = [
+  {
+    badge: "Projet Démonstration",
+    title: "Boutique e-commerce",
+    desc: "Illustration d'une plateforme e-commerce type : catalogue, panier, paiement mobile money, gestion des commandes.",
+    tags: ["Next.js", "Stripe / Wave", "Multi-catégories"],
+    image: portfolioEcommerce,
+  },
+  {
+    badge: "Projet Démonstration",
+    title: "Dashboard analytique SaaS",
+    desc: "Exemple d'espace client avec suivi de projets, revenus et activité en temps réel — le type d'interface que nous construisons pour nos clients SaaS.",
+    tags: ["Tableau de bord", "Temps réel", "Multi-utilisateurs"],
+    image: serviceDashboard,
+  },
+  {
+    badge: "Concept",
+    title: "Plateforme de cybersécurité",
+    desc: "Concept d'interface de supervision sécurité : détection des menaces, audit et conformité, pensé pour une équipe SOC.",
+    tags: ["Audit", "Conformité", "Surveillance 24/7"],
+    image: serviceCybersecurite,
+  },
+  {
+    badge: "Concept",
+    title: "Agents IA métiers",
+    desc: "Illustration d'un agent IA connecté aux données d'une entreprise pour automatiser support, ventes ou analyse.",
+    tags: ["OpenAI", "Anthropic", "Automatisation"],
+    image: serviceIa,
+  },
+  {
+    badge: "Concept",
+    title: "Infrastructure cloud évolutive",
+    desc: "Exemple d'architecture cloud pensée pour la haute disponibilité et la montée en charge progressive.",
+    tags: ["Cloud", "CI/CD", "Scalabilité"],
+    image: serviceCloud,
+  },
+  {
+    badge: "Projet Démonstration",
+    title: "Application mobile de suivi",
+    desc: "Illustration d'une application mobile de tableau de bord avec statistiques et activité récente.",
+    tags: ["iOS", "Android", "Cross-platform"],
+    image: serviceMobile,
+  },
 ];
 
 export default function PortfolioPage() {
@@ -29,34 +79,34 @@ export default function PortfolioPage() {
             NOS RÉALISATIONS
           </div>
           <h1>
-            Le portfolio <em>arrive bientôt.</em>
+            Notre approche, <em>en démonstration.</em>
           </h1>
           <p className="hero-sub">
-            Nous documentons actuellement nos projets livrés — contexte, stack technique et résultats concrets.
-            Chaque étude de cas sera publiée ici au fur et à mesure.
+            Ces projets sont des démonstrations et concepts créés pour illustrer notre travail — pas des
+            références clients. Nos vraies études de cas seront publiées ici au fur et à mesure des livraisons.
           </p>
         </div>
       </section>
 
       <section className="tight">
         <div className="wrap">
-          <Reveal className="section-head">
-            <span className="kicker">En préparation</span>
-            <h2>Ce que cette page contiendra.</h2>
-          </Reveal>
-
           <Reveal
-            className="grid-4"
-            style={{ background: "transparent", border: "none", gap: 20 }}
+            className="grid-3"
+            style={{ background: "transparent", border: "none", gap: 24 }}
           >
-            {PLACEHOLDER_SLOTS.map((label) => (
-              <div className="placeholder-card" key={label}>
-                <div className="placeholder-icon">
-                  <ImageOff />
+            {PROJECTS.map((p) => (
+              <div className="demo-card" key={p.title}>
+                <Image src={p.image} alt={`${p.badge} — ${p.title}`} className="demo-card-img" sizes="380px" />
+                <div className="demo-card-body">
+                  <span className="demo-badge">{p.badge}</span>
+                  <h3>{p.title}</h3>
+                  <p>{p.desc}</p>
+                  <div className="service-tags">
+                    {p.tags.map((t) => (
+                      <span key={t}>{t}</span>
+                    ))}
+                  </div>
                 </div>
-                <span className="placeholder-tag">À venir</span>
-                <h3>{label}</h3>
-                <p>Étude de cas en préparation pour cette catégorie.</p>
               </div>
             ))}
           </Reveal>
@@ -68,7 +118,7 @@ export default function PortfolioPage() {
           <span className="kicker" style={{ justifyContent: "center", display: "flex" }}>
             Un projet en tête ?
           </span>
-          <h2>En attendant, parlons du vôtre.</h2>
+          <h2>Faisons de votre projet notre prochaine vraie référence.</h2>
           <div className="cta-actions">
             <Link href="/contact" className="btn-primary">
               Demander un devis

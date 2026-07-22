@@ -7,6 +7,7 @@ import serviceIa from "@/public/images/service-ia.png";
 import serviceMobile from "@/public/images/service-mobile.png";
 import serviceCloud from "@/public/images/service-cloud.png";
 import serviceCybersecurite from "@/public/images/service-cybersecurite.png";
+import heroVisual from "@/public/images/hero-visual.png";
 
 export const metadata: Metadata = {
   title: "NGUERA SENEGALENSIS TECH — Building the Future with Artificial Intelligence",
@@ -121,39 +122,50 @@ export default function HomePage() {
     <>
       <section className="hero">
         <HorizonCanvas horizonRatio={0.62} baobabScale={1} />
-        <div className="hero-inner">
-          <div className="eyebrow">
-            <span className="dot" />
-            DAKAR · SÉNÉGAL — DISPONIBLE À L'INTERNATIONAL
+        <div className="hero-inner hero-inner-split">
+          <div>
+            <div className="eyebrow">
+              <span className="dot" />
+              DAKAR · SÉNÉGAL — DISPONIBLE À L'INTERNATIONAL
+            </div>
+            <h1>
+              Nous construisons le futur, <em>racine ancrée</em>, esprit tourné vers demain.
+            </h1>
+            <p className="hero-sub">
+              NGUERA SENEGALENSIS TECH conçoit des plateformes IA, des logiciels et des produits digitaux de
+              niveau mondial pour des entreprises qui refusent la médiocrité — depuis l'Afrique, pour le monde.
+            </p>
+            <div className="hero-actions">
+              <Link href="/contact" className="btn-primary">
+                Démarrer un projet
+              </Link>
+              <Link href="/services" className="btn-ghost">
+                Voir nos expertises
+              </Link>
+            </div>
+            <div className="hero-meta">
+              <div>
+                <div className="stat-num">12+</div>
+                <div className="stat-label">DOMAINES D'EXPERTISE</div>
+              </div>
+              <div>
+                <div className="stat-num">100%</div>
+                <div className="stat-label">CODE PRODUCTION-READY</div>
+              </div>
+              <div>
+                <div className="stat-num">24/7</div>
+                <div className="stat-label">SUPPORT & MONITORING</div>
+              </div>
+            </div>
           </div>
-          <h1>
-            Nous construisons le futur, <em>racine ancrée</em>, esprit tourné vers demain.
-          </h1>
-          <p className="hero-sub">
-            NGUERA SENEGALENSIS TECH conçoit des plateformes IA, des logiciels et des produits digitaux de
-            niveau mondial pour des entreprises qui refusent la médiocrité — depuis l'Afrique, pour le monde.
-          </p>
-          <div className="hero-actions">
-            <Link href="/contact" className="btn-primary">
-              Démarrer un projet
-            </Link>
-            <Link href="/services" className="btn-ghost">
-              Voir nos expertises
-            </Link>
-          </div>
-          <div className="hero-meta">
-            <div>
-              <div className="stat-num">12+</div>
-              <div className="stat-label">DOMAINES D'EXPERTISE</div>
-            </div>
-            <div>
-              <div className="stat-num">100%</div>
-              <div className="stat-label">CODE PRODUCTION-READY</div>
-            </div>
-            <div>
-              <div className="stat-num">24/7</div>
-              <div className="stat-label">SUPPORT & MONITORING</div>
-            </div>
+          <div className="hero-visual-frame">
+            <Image
+              src={heroVisual}
+              alt="Centre de contrôle technologique NGUERA SENEGALENSIS TECH — carte de l'Afrique en réseau et écrans de supervision"
+              sizes="(max-width: 980px) 90vw, 40vw"
+              style={{ width: "100%", height: "auto" }}
+              priority
+            />
           </div>
         </div>
       </section>

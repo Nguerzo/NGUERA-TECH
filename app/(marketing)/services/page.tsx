@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import HorizonCanvas from "@/components/marketing/HorizonCanvas";
 import Reveal from "@/components/marketing/Reveal";
+import serviceIa from "@/public/images/service-ia.png";
+import serviceCybersecurite from "@/public/images/service-cybersecurite.png";
+import serviceDatacenter from "@/public/images/service-datacenter.png";
 
 export const metadata: Metadata = {
   title: "Services — NGUERA SENEGALENSIS TECH",
@@ -37,15 +41,15 @@ const DEV_SERVICES = [
 ];
 
 const AI_CARDS = [
-  { title: "Agents IA métiers", desc: "Assistants spécialisés (commercial, support, technique) connectés à vos données réelles." },
+  { title: "Agents IA métiers", desc: "Assistants spécialisés (commercial, support, technique) connectés à vos données réelles.", image: serviceIa },
   { title: "Chatbots", desc: "Réponse client automatisée sur votre site, WhatsApp ou vos réseaux, avec escalade humaine si besoin." },
   { title: "Automatisation intelligente", desc: "Workflows qui déclenchent emails, relances et mises à jour sans intervention manuelle." },
   { title: "Intégrations API IA", desc: "OpenAI, Anthropic, Gemini, Mistral — la brique adaptée à chaque usage, pas une seule pour tout faire." },
 ];
 
 const INFRA_CARDS = [
-  { title: "Cybersécurité", desc: "Authentification forte, 2FA, chiffrement, protections CSRF/XSS/injection, journalisation des accès." },
-  { title: "Cloud & DevOps", desc: "Infrastructure évolutive, sauvegardes automatiques, déploiement continu, supervision en temps réel." },
+  { title: "Cybersécurité", desc: "Authentification forte, 2FA, chiffrement, protections CSRF/XSS/injection, journalisation des accès.", image: serviceCybersecurite },
+  { title: "Cloud & DevOps", desc: "Infrastructure évolutive, sauvegardes automatiques, déploiement continu, supervision en temps réel.", image: serviceDatacenter },
   { title: "Maintenance & support", desc: "Corrections, mises à jour de sécurité et évolutions après la mise en ligne — un produit vivant, pas livré puis abandonné." },
 ];
 
@@ -106,12 +110,22 @@ export default function ServicesPage() {
             <h2>Des agents IA qui font vraiment le travail.</h2>
           </Reveal>
           <Reveal className="grid-4">
-            {AI_CARDS.map((c) => (
-              <div className="card" key={c.title}>
-                <h3>{c.title}</h3>
-                <p>{c.desc}</p>
-              </div>
-            ))}
+            {AI_CARDS.map((c) =>
+              c.image ? (
+                <div className="card card-photo" key={c.title}>
+                  <Image src={c.image} alt={`Illustration — ${c.title}`} className="card-photo-img" sizes="280px" />
+                  <div className="card-photo-body">
+                    <h3>{c.title}</h3>
+                    <p>{c.desc}</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="card" key={c.title}>
+                  <h3>{c.title}</h3>
+                  <p>{c.desc}</p>
+                </div>
+              )
+            )}
           </Reveal>
         </div>
       </section>
@@ -123,12 +137,22 @@ export default function ServicesPage() {
             <h2>Ce qui ne se voit pas, mais qui protège tout le reste.</h2>
           </Reveal>
           <Reveal className="grid-3">
-            {INFRA_CARDS.map((c) => (
-              <div className="card" key={c.title}>
-                <h3>{c.title}</h3>
-                <p>{c.desc}</p>
-              </div>
-            ))}
+            {INFRA_CARDS.map((c) =>
+              c.image ? (
+                <div className="card card-photo" key={c.title}>
+                  <Image src={c.image} alt={`Illustration — ${c.title}`} className="card-photo-img" sizes="280px" />
+                  <div className="card-photo-body">
+                    <h3>{c.title}</h3>
+                    <p>{c.desc}</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="card" key={c.title}>
+                  <h3>{c.title}</h3>
+                  <p>{c.desc}</p>
+                </div>
+              )
+            )}
           </Reveal>
         </div>
       </section>
