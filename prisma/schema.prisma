@@ -1,0 +1,96 @@
+// Schéma Prisma — phase 3 (auth + espace client en lecture seule)
+// Les modèles Ticket, Message, Quote, BlogPost, AuditLog du document d'architecture
+// seront ajoutés en phase 4/5. On démarre volontairement avec le socle minimal
+// nécessaire pour que le dashboard client affiche des données réelles.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") // pooler transaction-mode (pgbouncer) — requêtes à l'exécution
+  directUrl = env("DIRECT_URL")   // pooler session-mode — migrations (advisory locks incompatibles avec pgbouncer)
+}
+
+enum Role {
+  CLIENT
+  TEAM
+  ADMIN
+}
+
+enum ProjectStatus {
+  DEVIS
+  EN_COURS
+  EN_REVISION
+  LIVRE
+  MAINTENANCE
+}
+
+enum InvoiceStatus {
+  BROUILLON
+  ENVOYEE
+  PAYEE
+  EN_RETARD
+}
+
+// Miroir de la table auth.users de Supabase : Supabase gère le mot de passe
+// et la session, ce modèle stocke les données métier liées à l'utilisateur.
+// L'id doit être identique à auth.users.id (voir README, section "Provisioning").
+model User {
+  id          String    @id // = auth.users.id (Supabase)
+  email       String    @unique
+  fullName    String
+  role        Role      @default(CLIENT)
+  companyName String?
+  phone       String?
+  createdAt   DateTime  @default(now())
+  projects    Project[]
+  invoices    Invoice[]
+}
+
+model Project {
+  id            String        @id @default(uuid())
+  title         String
+  description   String
+  status        ProjectStatus @default(DEVIS)
+  client        User          @relation(fields: [clientId], references: [id])
+  clientId      String
+  budgetEstime  Decimal?
+  dateDebut     DateTime?
+  dateLivraison DateTime?
+  documents     Document[]
+  invoices      Invoice[]
+  createdAt     DateTime      @default(now())
+
+  @@index([clientId])
+}
+
+model Invoice {
+  id        String        @id @default(uuid())
+  number    String        @unique
+  project   Project       @relation(fields: [projectId], references: [id])
+  projectId String
+  client    User          @relation(fields: [clientId], references: [id])
+  clientId  String
+  amount    Decimal
+  currency  String        @default("XOF")
+  status    InvoiceStatus @default(BROUILLON)
+  dueDate   DateTime
+  paidAt    DateTime?
+  createdAt DateTime      @default(now())
+
+  @@index([clientId])
+}
+
+model Document {
+  id         String   @id @default(uuid())
+  project    Project  @relation(fields: [projectId], references: [id])
+  projectId  String
+  fileName   String
+  fileUrl    String
+  uploadedBy String
+  createdAt  DateTime @default(now())
+
+  @@index([projectId])
+}
