@@ -273,6 +273,40 @@ footer{padding:64px 0 40px;border-top:1px solid var(--glass-border);}
 .reveal.in{opacity:1;transform:translateY(0);}
 body{background:var(--ink);}
 
+/* ---------- PORTFOLIO / ÉQUIPE — emplacements à compléter ---------- */
+.placeholder-card{
+  border:1px dashed var(--glass-border);border-radius:16px;padding:32px 26px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:14px;
+  transition:border-color .2s;
+}
+.placeholder-card:hover{border-color:rgba(242,238,230,0.2);}
+.placeholder-icon{
+  width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  background:rgba(242,238,230,0.04);color:var(--ivory-faint);flex-shrink:0;
+}
+.placeholder-icon svg{width:18px;height:18px;}
+.placeholder-card h3{font-family:var(--display);font-size:16px;font-weight:600;color:var(--ivory-dim);}
+.placeholder-card p{font-size:13px;color:var(--ivory-faint);line-height:1.6;}
+.placeholder-tag{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:0.05em;color:var(--ivory-faint);
+  text-transform:uppercase;border:1px solid var(--glass-border);padding:4px 10px;border-radius:100px;
+}
+
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+@media (max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.team-grid{grid-template-columns:1fr;}}
+.team-card{
+  border:1px dashed var(--glass-border);border-radius:16px;padding:28px 22px;text-align:center;
+}
+.placeholder-avatar{
+  width:64px;height:64px;border-radius:50%;margin:0 auto 18px;
+  background:rgba(242,238,230,0.04);border:1px solid var(--glass-border);
+  display:flex;align-items:center;justify-content:center;color:var(--ivory-faint);
+}
+.placeholder-avatar svg{width:24px;height:24px;}
+.team-card h4{font-family:var(--display);font-size:15px;font-weight:600;color:var(--ivory-dim);margin-bottom:4px;}
+.team-card p{font-size:12.5px;color:var(--ivory-faint);}
+
 /* ---------- DASHBOARD (espace client + back-office) ----------
    Accents secondaires cyan/violet réservés à l'espace connecté.
    L'ochre/or reste la couleur de marque dominante sur le site public. */

@@ -216,7 +216,13 @@ export default function HomePage() {
               </p>
               <div className="panel-foot">
                 <div className="avatar" />
-                <div>Équipe fondatrice — NGUERA SENEGALENSIS TECH</div>
+                <div>
+                  Équipe fondatrice — NGUERA SENEGALENSIS TECH
+                  <br />
+                  <Link href="/a-propos" style={{ color: "var(--gold)", fontSize: 12.5 }}>
+                    Découvrir l'équipe →
+                  </Link>
+                </div>
               </div>
             </Reveal>
           </div>
