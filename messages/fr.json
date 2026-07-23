@@ -1,0 +1,630 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "À propos",
+    "pricing": "Tarifs",
+    "contact": "Contact",
+    "cta": "Demander un devis"
+  },
+  "footer": {
+    "tagline": "Nous concevons des systèmes numériques intelligents pour des organisations ambitieuses.",
+    "company": "Entreprise",
+    "resources": "Ressources",
+    "legal": "Légal",
+    "careers": "Carrières",
+    "blog": "Blog",
+    "documentation": "Documentation",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "cookies": "Gestion des cookies",
+    "rights": "Tous droits réservés.",
+    "servingLine": "Au service de clients au Royaume-Uni et à l'international.",
+    "liveClockLabel": "Heure locale à Dakar —"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Infrastructure numérique intelligente",
+      "headline": "Nous concevons des systèmes numériques intelligents pour des organisations ambitieuses.",
+      "subhead": "Solutions IA, plateformes logicielles et infrastructures numériques sécurisées, pour des entreprises au Royaume-Uni et partout dans le monde.",
+      "ctaPrimary": "Démarrer un projet",
+      "ctaSecondary": "Découvrir nos expertises",
+      "scrollHint": "Faites défiler pour explorer"
+    },
+    "narrative": {
+      "step1Label": "Réseau mondial",
+      "step1Text": "Un système distribué de clients, de données et d'infrastructures — connectés, où qu'ils soient.",
+      "step2Label": "Architecture logicielle",
+      "step2Text": "Ce réseau devient structure : des systèmes modulaires conçus pour être compris, étendus et fiables.",
+      "step3Label": "Intelligence en direct",
+      "step3Text": "La structure devient interface active — tableaux de bord, automatisation et agents IA sur des données réelles.",
+      "step4Label": "Infrastructure sécurisée",
+      "step4Text": "En dessous de tout cela, une infrastructure pensée pour la résilience, la sécurité et la montée en charge."
+    },
+    "capabilities": {
+      "kicker": "Ce que nous faisons",
+      "heading": "Douze disciplines, une seule équipe responsable.",
+      "sub": "De la première décision d'architecture au support en production — rien délégué, rien sous-traité.",
+      "items": [
+        { "name": "Intelligence Artificielle", "desc": "Des systèmes IA appliqués, construits autour de vos données réelles." },
+        { "name": "Agents IA & Automatisation", "desc": "Des agents autonomes qui exécutent de vrais processus, avec supervision humaine intégrée." },
+        { "name": "Développement Logiciel Sur Mesure", "desc": "Des systèmes critiques conçus précisément pour vos besoins." },
+        { "name": "Plateformes Web", "desc": "Des applications web performantes, conçues pour grandir avec votre activité." },
+        { "name": "Applications Mobiles", "desc": "Applications natives et cross-platform pour iOS et Android." },
+        { "name": "Produits SaaS", "desc": "Produits multi-clients avec abonnements, rôles et permissions." },
+        { "name": "Infrastructure Cloud", "desc": "Infrastructure résiliente et évolutive, avec déploiement continu." },
+        { "name": "Cybersécurité", "desc": "Authentification, chiffrement et contrôle d'accès pensés dès la conception." },
+        { "name": "Données & Analytique", "desc": "Transformer vos données opérationnelles en décisions concrètes." },
+        { "name": "Design de Produit UI/UX", "desc": "Des interfaces pensées pour les personnes qui les utilisent réellement." },
+        { "name": "Intégration de Systèmes", "desc": "Connecter les outils que vous utilisez déjà en un système cohérent." },
+        { "name": "Conseil Technologique", "desc": "Un accompagnement technique indépendant pour les décisions à fort enjeu." }
+      ]
+    },
+    "why": {
+      "kicker": "Notre méthode",
+      "heading": "Pensé pour des organisations qui ne peuvent pas se permettre l'à-peu-près.",
+      "point1Title": "Standard de livraison international",
+      "point1Text": "Nous travaillons selon le niveau attendu par des clients britanniques et internationaux — périmètre clair, délais clairs, responsabilité claire.",
+      "point2Title": "Sécurité dès la conception",
+      "point2Text": "Authentification, chiffrement et contrôle d'accès sont des décisions d'architecture, pas des ajouts de dernière minute.",
+      "point3Title": "Un code que vous possédez réellement",
+      "point3Text": "Une architecture propre et documentée, livrée en totalité — aucune dépendance cachée envers nous pour la faire tourner.",
+      "point4Title": "Une équipe, toutes les compétences",
+      "point4Text": "Design, ingénierie, IA et sécurité sous un même toit — pas cinq prestataires à coordonner vous-même.",
+      "learnMore": "Découvrir l'équipe"
+    },
+    "stack": {
+      "kicker": "Notre stack",
+      "heading": "Des technologies éprouvées, pas des effets de mode."
+    },
+    "cta": {
+      "kicker": "Prêt à démarrer",
+      "heading": "Parlons de votre projet.",
+      "sub": "Proposition claire sous 48 heures. Premier échange sans engagement.",
+      "primary": "Démarrer un projet",
+      "secondary": "Réserver un rendez-vous"
+    }
+  },
+  "services": {
+    "hero": {
+      "eyebrow": "Ce que nous faisons",
+      "headline": "Douze disciplines. Une seule équipe qui livre.",
+      "sub": "Sélectionnez une discipline pour voir notre approche — ce qu'elle résout, comment nous la livrons, et les technologies utilisées."
+    },
+    "indexHint": "Disciplines",
+    "detailHint": "Sélectionnez une discipline",
+    "labels": {
+      "benefits": "Bénéfices",
+      "problems": "Problèmes résolus",
+      "technologies": "Technologies",
+      "example": "En pratique",
+      "cta": "En parler"
+    },
+    "process": {
+      "kicker": "Notre méthode",
+      "heading": "Le même processus, quelle que soit la discipline.",
+      "steps": [
+        { "title": "Comprendre", "desc": "Nous partons de votre problème, pas de notre stack technique — périmètre, contraintes et définition claire du succès." },
+        { "title": "Concevoir", "desc": "Les décisions d'architecture et d'interface sont posées clairement avant la première ligne de code de production." },
+        { "title": "Construire", "desc": "Livraison itérative avec une progression visible — vous voyez un produit fonctionnel tôt, pas seulement à la fin." },
+        { "title": "Accompagner", "desc": "Passation avec documentation complète, et continuité après la mise en ligne si vous en avez besoin." }
+      ]
+    },
+    "items": [
+      {
+        "slug": "artificial-intelligence",
+        "name": "Intelligence Artificielle",
+        "tagline": "Des systèmes IA construits autour de vos données",
+        "description": "Nous concevons et développons des systèmes d'IA appliqués — modèles, pipelines et intégrations — ancrés dans vos données et vos process réels, pas un modèle générique habillé d'une fenêtre de chat.",
+        "benefits": [
+          "Des résultats fondés sur vos données réelles, pas sur un entraînement générique",
+          "Un périmètre clair de ce que le système peut et ne peut pas faire, défini en amont",
+          "Une intégration pensée avec les systèmes que vous utilisez déjà"
+        ],
+        "problems": [
+          "Un travail manuel répétitif qui suit un schéma reproductible mais n'a jamais été automatisé",
+          "Des données qui existent mais ne servent pas à la décision",
+          "Des outils IA génériques qui ne comprennent pas votre métier spécifique"
+        ],
+        "technologies": ["OpenAI", "Anthropic", "Python", "Bases vectorielles", "Pipelines RAG"],
+        "example": "Une équipe support submergée de tickets répétitifs pourrait utiliser un système de génération augmentée par récupération, entraîné sur sa propre documentation, pour préparer des premières réponses qu'un humain valide — réduisant le délai de réponse sans retirer le jugement humain de la boucle.",
+        "cta": "Parler IA avec nous"
+      },
+      {
+        "slug": "ai-agents-automation",
+        "name": "Agents IA & Automatisation",
+        "tagline": "Des agents autonomes, sous supervision humaine",
+        "description": "Des agents qui exécutent de vrais processus à plusieurs étapes — vérifier des données, agir sur plusieurs systèmes, signaler ce qui nécessite un humain — plutôt qu'une simple réponse de chatbot.",
+        "benefits": [
+          "Retire les tâches manuelles répétitives à plusieurs étapes de la charge de votre équipe",
+          "Des points de contrôle humains pour tout ce qui a de vraies conséquences",
+          "Traçable — chaque action d'un agent est enregistrée et vérifiable"
+        ],
+        "problems": [
+          "Du temps d'équipe consacré à des processus multi-étapes qui suivent des règles claires",
+          "Des délais causés par des transmissions manuelles entre systèmes ou personnes",
+          "Des erreurs de saisie manuelle entre outils déconnectés"
+        ],
+        "technologies": ["LangChain", "n8n", "Node.js", "Webhooks", "Intégrations API"],
+        "example": "Une entreprise qui ressaisit manuellement des données entre un formulaire de réservation et son outil de facturation pourrait confier ce transfert à un agent qui le valide selon des règles métier, et n'escalade vers une personne qu'en cas d'anomalie.",
+        "cta": "Parler automatisation avec nous"
+      },
+      {
+        "slug": "custom-software-development",
+        "name": "Développement Logiciel Sur Mesure",
+        "tagline": "Un logiciel construit pour vos besoins exacts",
+        "description": "Des logiciels sur mesure, critiques pour votre activité, conçus autour de votre fonctionnement réel — pas un produit générique qu'on essaie de faire rentrer de force.",
+        "benefits": [
+          "Aucune fonctionnalité payée pour rien, aucun contournement pour ce qui manque",
+          "Conçu pour grandir avec votre activité plutôt que nécessiter une refonte",
+          "Vous possédez le code et les décisions d'architecture qui le sous-tendent"
+        ],
+        "problems": [
+          "Un logiciel du marché qui couvre 80 % du besoin et résiste sur le reste",
+          "Des processus qui vivent dans des tableurs faute d'outil adapté",
+          "Des systèmes existants trop fragiles pour être étendus sans risque"
+        ],
+        "technologies": ["Next.js", "Node.js", "PostgreSQL", "TypeScript", "Docker"],
+        "example": "Une activité qui pilote des processus critiques sur trois tableurs déconnectés pourrait disposer d'un système unique conçu sur mesure, reflétant son fonctionnement réel, avec un contrôle d'accès et une traçabilité appropriés.",
+        "cta": "En discuter"
+      },
+      {
+        "slug": "web-platforms",
+        "name": "Plateformes Web",
+        "tagline": "Des applications web hautes performances",
+        "description": "Des plateformes web conçues pour la rapidité, la fiabilité et la croissance — du site vitrine qui convertit jusqu'à l'application web complexe qui fait tourner votre activité.",
+        "benefits": [
+          "Rapide par défaut — la performance est une exigence, pas une option",
+          "Conçu pour absorber un trafic réel et sa croissance",
+          "SEO et accessibilité pris en compte dès la première décision d'architecture"
+        ],
+        "problems": [
+          "Un site lent, difficile à mettre à jour, ou qui casse sous une charge réelle",
+          "Une plateforme qu'on ne peut pas étendre sans tout refaire",
+          "Une mauvaise visibilité dans les moteurs de recherche liée à une dette technique de fond"
+        ],
+        "technologies": ["Next.js", "React", "TypeScript", "Vercel", "PostgreSQL"],
+        "example": "Une entreprise en croissance qui dépasse les limites d'un site basé sur un template pourrait migrer vers une plateforme réellement rapide, correctement structurée pour le référencement, et conçue pour ajouter des capacités sans repartir de zéro.",
+        "cta": "En discuter"
+      },
+      {
+        "slug": "mobile-applications",
+        "name": "Applications Mobiles",
+        "tagline": "Applications natives et cross-platform",
+        "description": "Des applications iOS et Android — natives ou cross-platform selon le besoin réel du produit — connectées aux mêmes systèmes que le reste de votre plateforme.",
+        "benefits": [
+          "Un choix de technologie guidé par les besoins du produit, pas par habitude",
+          "Connectée à votre backend et vos données existantes, pas isolée",
+          "Le processus de validation des stores pris en compte dès le départ"
+        ],
+        "problems": [
+          "Des clients qui attendent une application mobile que vous n'avez pas encore",
+          "Une application existante lente, peu fiable ou difficile à mettre à jour",
+          "Des équipes terrain qui ont besoin d'un accès mobile à des systèmes aujourd'hui réservés au bureau"
+        ],
+        "technologies": ["React Native", "Swift", "Kotlin", "Expo", "Notifications push"],
+        "example": "Une entreprise de service dont les équipes terrain remplissent aujourd'hui des formulaires papier pourrait disposer d'une application mobile qui capture les mêmes informations numériquement et les synchronise directement avec le back-office.",
+        "cta": "En discuter"
+      },
+      {
+        "slug": "saas-products",
+        "name": "Produits SaaS",
+        "tagline": "Des produits multi-clients, conçus pour grandir",
+        "description": "Des produits SaaS architecturés dès le départ pour plusieurs clients, avec facturation par abonnement, rôles et permissions — l'infrastructure dont un vrai produit a besoin, pas une application mono-client renommée.",
+        "benefits": [
+          "Une architecture multi-clients pensée pour le prochain client, pas seulement le premier",
+          "Une logique d'abonnement et de facturation intégrée dès le départ",
+          "Un accès basé sur les rôles pour que chaque client ne voie que ce qu'il doit voir"
+        ],
+        "problems": [
+          "Une idée validée avec un seul client qui doit maintenant en servir plusieurs",
+          "Un produit qui a besoin d'une vraie structure de comptes, d'équipes et de facturation",
+          "Une incertitude sur la bonne façon d'architecturer un système multi-clients en sécurité"
+        ],
+        "technologies": ["Next.js", "Stripe", "PostgreSQL", "Prisma", "Supabase"],
+        "example": "Un outil conçu pour résoudre un problème interne à une entreprise pourrait être réarchitecturé en véritable produit SaaS multi-clients, avec les données de chaque client correctement isolées et son propre plan de facturation.",
+        "cta": "En discuter"
+      },
+      {
+        "slug": "cloud-infrastructure",
+        "name": "Infrastructure Cloud",
+        "tagline": "Infrastructure résiliente, déploiement continu",
+        "description": "Une infrastructure cloud pensée pour la résilience et la montée en charge, avec des pipelines de déploiement automatisés pour que les mises en production soient routinières, pas risquées.",
+        "benefits": [
+          "Une infrastructure qui absorbe la demande au lieu de céder sous elle",
+          "Un déploiement continu — les mises en production deviennent fréquentes et à faible risque",
+          "Une supervision et des alertes qui détectent les problèmes avant vos clients"
+        ],
+        "problems": [
+          "Des interruptions de service lors des déploiements ou des pics de trafic",
+          "Des processus de déploiement manuels et sources d'erreurs",
+          "Aucune visibilité sur la santé du système avant qu'un incident survienne"
+        ],
+        "technologies": ["AWS", "Vercel", "Docker", "GitHub Actions", "Terraform"],
+        "example": "Une plateforme qui nécessite aujourd'hui un déploiement manuel en dehors des heures ouvrées pourrait passer à des déploiements automatisés sans interruption, avec une supervision qui signale les problèmes avant que vos clients ne les voient.",
+        "cta": "En discuter"
+      },
+      {
+        "slug": "cybersecurity",
+        "name": "Cybersécurité",
+        "tagline": "La sécurité conçue dès le départ, pas ajoutée après",
+        "description": "L'authentification, le chiffrement et le contrôle d'accès traités comme des décisions d'architecture dès le départ — le travail de sécurité concret qui protège un système réel en production.",
+        "benefits": [
+          "Une authentification et un contrôle d'accès solides comme fondation, pas en option",
+          "Des données chiffrées en transit et au repos par défaut",
+          "Une journalisation des accès pour savoir qui a fait quoi, et quand"
+        ],
+        "problems": [
+          "Des systèmes qui traitent des données sensibles sans contrôle d'accès réel",
+          "Aucune réponse claire à « qui peut voir ceci, et pourquoi »",
+          "La sécurité traitée comme une case à cocher après la mise en ligne plutôt qu'une donnée de conception"
+        ],
+        "technologies": ["OAuth 2.0", "Sécurité au niveau des lignes (RLS)", "TLS/SSL", "Limitation de débit", "Journal d'audit"],
+        "example": "Une plateforme qui stocke des données clients sans contrôle d'accès au niveau des lignes pourrait voir ce contrôle ajouté après coup, pour isoler strictement les données de chaque client de celles des autres, avec chaque accès journalisé.",
+        "cta": "En discuter"
+      },
+      {
+        "slug": "data-analytics",
+        "name": "Données & Analytique",
+        "tagline": "Des données opérationnelles aux décisions",
+        "description": "Transformer les données déjà générées par vos systèmes en tableaux de bord et rapports réellement exploitables par votre équipe, plutôt qu'en chiffres bruts que personne n'a le temps d'interpréter.",
+        "benefits": [
+          "Des décisions fondées sur ce qui se passe réellement, pas sur des suppositions",
+          "Des tableaux de bord construits autour des questions que votre équipe se pose vraiment",
+          "Des pipelines de données qui restent fiables même quand vos systèmes évoluent"
+        ],
+        "problems": [
+          "Des données dispersées entre plusieurs systèmes, sans vue d'ensemble fiable",
+          "Des rapports qui prennent des jours à assembler manuellement",
+          "Aucun moyen fiable de répondre à « comment se porte réellement l'activité ? »"
+        ],
+        "technologies": ["PostgreSQL", "Metabase", "dbt", "Python", "API REST"],
+        "example": "Une entreprise qui prend ses décisions à partir d'un tableur assemblé manuellement chaque mois pourrait passer à un tableau de bord en direct connecté à ses systèmes opérationnels, réduisant le temps de reporting de plusieurs jours à l'instantané.",
+        "cta": "En discuter"
+      },
+      {
+        "slug": "ui-ux-design",
+        "name": "Design de Produit UI/UX",
+        "tagline": "Des interfaces pour de vrais utilisateurs",
+        "description": "Un design produit ancré dans la façon dont les personnes qui utilisent réellement votre logiciel travaillent — pas des tendances visuelles empruntées à des produits sans rapport.",
+        "benefits": [
+          "Des interfaces conçues autour des tâches réelles des utilisateurs, pas des tendances esthétiques",
+          "Un système de design cohérent qui accélère chaque fonctionnalité future",
+          "L'accessibilité traitée comme une exigence, pas un ajout tardif"
+        ],
+        "problems": [
+          "Un produit fonctionnel mais confus à utiliser au quotidien",
+          "Des interfaces incohérentes qui ralentissent les équipes et érodent la confiance",
+          "Des fonctionnalités développées mais jamais utilisées faute d'être trouvées"
+        ],
+        "technologies": ["Figma", "Systèmes de design", "Accessibilité WCAG", "Prototypage", "Tests utilisateurs"],
+        "example": "Un outil interne construit fonctionnalité par fonctionnalité pendant plusieurs années, devenu incohérent et lent à utiliser, pourrait être repensé autour d'un système de design cohérent sans perturber les habitudes de travail existantes.",
+        "cta": "En discuter"
+      },
+      {
+        "slug": "systems-integration",
+        "name": "Intégration de Systèmes",
+        "tagline": "Vos outils existants, connectés entre eux",
+        "description": "Connecter les logiciels que vous utilisez déjà — CRM, facturation, paiements, outils internes — en un système cohérent plutôt qu'un ensemble de comptes déconnectés.",
+        "benefits": [
+          "Une donnée saisie une fois, disponible partout où elle est nécessaire",
+          "Moins de transmissions manuelles entre outils déconnectés",
+          "Une source de vérité unique plutôt que trois versions légèrement différentes"
+        ],
+        "problems": [
+          "La même information ressaisie manuellement dans plusieurs systèmes",
+          "Des outils qui ne communiquent pas entre eux, forçant une réconciliation manuelle",
+          "Aucune vue d'ensemble fiable car les données vivent en silos"
+        ],
+        "technologies": ["API REST", "Webhooks", "Zapier/n8n", "GraphQL", "Middleware sur mesure"],
+        "example": "Une entreprise qui ressaisit les mêmes informations client dans son CRM, son outil de facturation et son support client pourrait connecter ces systèmes pour qu'une seule mise à jour se propage automatiquement partout.",
+        "cta": "En discuter"
+      },
+      {
+        "slug": "technology-consulting",
+        "name": "Conseil Technologique",
+        "tagline": "Un regard indépendant sur les décisions à fort enjeu",
+        "description": "Un accompagnement technique pour les organisations face à une décision qu'elles ne peuvent pas se permettre de rater — orientation d'architecture, évaluation de prestataire, audit technique, ou second avis avant un investissement important.",
+        "benefits": [
+          "Un jugement indépendant — aucun intérêt à vous vendre un produit en particulier",
+          "Ancré dans l'expérience de livraison réelle, pas dans la théorie de présentation",
+          "Une réponse claire et honnête, y compris quand la réponse est « pas encore »"
+        ],
+        "problems": [
+          "Une décision technique majeure sans expert indépendant pour la challenger",
+          "Une incertitude sur la capacité d'un système existant à monter en charge, ou sur la nécessité de le remplacer",
+          "L'évaluation d'une proposition de prestataire ou d'agence sans expertise technique interne"
+        ],
+        "technologies": ["Revue d'architecture", "Audit technique", "Évaluation de prestataires", "Feuille de route"],
+        "example": "Une direction sur le point d'engager un budget important dans la refonte d'une plateforme pourrait faire réaliser un audit technique indépendant au préalable, pour confirmer la solidité du plan avant d'engager la dépense.",
+        "cta": "Réserver un échange"
+      }
+    ],
+    "cta": {
+      "kicker": "Vous ne savez pas quelle discipline vous concerne",
+      "heading": "Décrivez-nous le problème. Nous vous dirons comment nous l'aborderions.",
+      "sub": "La plupart des projets touchent plusieurs disciplines à la fois — c'est précisément pour cela que nous travaillons comme une seule équipe.",
+      "primary": "Démarrer un projet",
+      "secondary": "Voir les tarifs"
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "eyebrow": "Sélection de travaux",
+      "headline": "Notre façon de penser, mise en pratique.",
+      "sub": "Les pièces ci-dessous sont des réalisations de démonstration et des concepts — créés pour montrer notre approche et notre savoir-faire. Ce ne sont pas des projets clients. Au fur et à mesure des livraisons réelles, elles seront publiées ici sous forme d'études de cas, clairement identifiées comme telles."
+    },
+    "badges": {
+      "demo": "Projet Démonstration",
+      "concept": "Concept"
+    },
+    "items": [
+      {
+        "slug": "ecommerce",
+        "badge": "demo",
+        "title": "Boutique e-commerce",
+        "desc": "Démonstration d'une plateforme e-commerce complète — catalogue, panier, paiement mobile money et carte, et gestion des commandes pensée pour un usage opérationnel réel, pas seulement une maquette.",
+        "tags": ["Next.js", "Stripe / Wave", "Catalogue multi-catégories"]
+      },
+      {
+        "slug": "saas-dashboard",
+        "badge": "demo",
+        "title": "Dashboard analytique SaaS",
+        "desc": "Exemple d'espace client avec suivi de projets, revenus et activité en temps réel — le type d'interface que nous construisons pour nos clients SaaS multi-clients.",
+        "tags": ["Tableau de bord temps réel", "Multi-clients", "Accès par rôles"]
+      },
+      {
+        "slug": "security-platform",
+        "badge": "concept",
+        "title": "Plateforme de supervision sécurité",
+        "desc": "Concept d'interface de supervision sécurité — détection des menaces, traçabilité des audits et statut de conformité, pensé pour le fonctionnement réel d'une équipe SOC.",
+        "tags": ["Traçabilité", "Conformité", "Surveillance 24/7"]
+      },
+      {
+        "slug": "ai-agents",
+        "badge": "concept",
+        "title": "Agents IA pour les opérations métier",
+        "desc": "Concept montrant un agent IA connecté aux données propres d'une entreprise, prenant en charge le support, les demandes commerciales ou l'analyse, avec un humain pouvant intervenir à tout moment.",
+        "tags": ["OpenAI", "Anthropic", "Automatisation de workflows"]
+      },
+      {
+        "slug": "cloud-infrastructure",
+        "badge": "concept",
+        "title": "Infrastructure cloud évolutive",
+        "desc": "Concept d'architecture pour une infrastructure pensée pour la haute disponibilité et la montée en charge progressive — le type de fondation que nous concevons avant la première ligne de code applicatif.",
+        "tags": ["Architecture cloud", "CI/CD", "Auto-scaling"]
+      },
+      {
+        "slug": "mobile-tracking",
+        "badge": "demo",
+        "title": "Application mobile de suivi",
+        "desc": "Démonstration d'application mobile avec tableau de bord statistique et flux d'activité récente — le modèle que nous utilisons pour les applications terrain et opérationnelles.",
+        "tags": ["iOS", "Android", "Cross-platform"]
+      }
+    ],
+    "cta": {
+      "kicker": "Un projet en tête",
+      "heading": "Faisons de votre projet notre prochaine vraie étude de cas.",
+      "primary": "Demander un devis"
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "À propos",
+      "headline": "Une entreprise technologique au standard international.",
+      "sub": "NGUERA SENEGALENSIS TECH conçoit des systèmes IA, des logiciels et des infrastructures numériques pour des organisations au Royaume-Uni et dans le monde entier — avec la même exigence, où que soit le client."
+    },
+    "origin": {
+      "kicker": "D'où nous venons",
+      "heading": "Construit au Sénégal. Conçu pour le monde.",
+      "body": "Nous avons été fondés au Sénégal, et cette origine façonne notre façon de travailler — ingénieuse, directe, et sans compromis sur la qualité sous prétexte qu'un client est loin. Mais l'exigence que nous nous imposons n'a rien de régional. Nous travaillons à distance avec des clients au Royaume-Uni, en Europe, en Amérique du Nord et au Moyen-Orient au quotidien, pas par exception."
+    },
+    "mission": {
+      "kicker": "Notre mission",
+      "heading": "Construire l'infrastructure numérique sur laquelle nos clients grandissent.",
+      "body": "Nous ne livrons pas un site ou une application isolée avant de passer à autre chose. Nous construisons des fondations techniques et créatives pensées pour durer — architecture, sécurité et décisions de design faites correctement dès la première fois, pour que nos clients n'aient pas à tout refaire dix-huit mois plus tard."
+    },
+    "approach": {
+      "kicker": "Notre méthode",
+      "heading": "Les exigences sur lesquelles nous ne transigeons pas.",
+      "points": [
+        {
+          "title": "Périmètre et délais posés par écrit",
+          "desc": "Avant que le travail ne commence, vous savez ce qui est construit, pour quand, et ce qui se passe si cela change — aucune ambiguïté derrière laquelle se réfugier plus tard."
+        },
+        {
+          "title": "Sécurité et architecture, pas seulement des fonctionnalités",
+          "desc": "L'authentification, la gestion des données et l'architecture système sont des décisions prises délibérément, pas un ajout de dernière minute une fois l'interface terminée."
+        },
+        {
+          "title": "Livraison à distance, consciente des fuseaux horaires",
+          "desc": "Nous travaillons de façon asynchrone et sur plusieurs fuseaux horaires comme pratique standard, avec un rythme de communication clair posé dès le départ — la distance n'excuse pas le silence."
+        },
+        {
+          "title": "Passation complète, sans dépendance forcée",
+          "desc": "Vous recevez un code documenté et propre, et la pleine propriété de ce que nous construisons — notre valeur, c'est le travail lui-même, pas le fait de vous rendre le départ difficile."
+        }
+      ]
+    },
+    "expertise": {
+      "kicker": "Notre équipe",
+      "heading": "Les disciplines que couvre notre équipe.",
+      "sub": "Les profils individuels — noms, rôles et photos — seront publiés ici au fur et à mesure que notre page équipe publique s'étoffe. Voici les domaines sur lesquels notre équipe travaille aujourd'hui.",
+      "areas": [
+        { "role": "Ingénierie logicielle", "desc": "Web, mobile et systèmes critiques pour l'activité" },
+        { "role": "Intelligence Artificielle", "desc": "Agents IA, automatisation, machine learning appliqué" },
+        { "role": "Sécurité & Infrastructure", "desc": "Cybersécurité, architecture cloud, DevOps" },
+        { "role": "Produit & Design", "desc": "UX/UI, systèmes de design, identité de marque" }
+      ]
+    },
+    "cta": {
+      "kicker": "Envie de collaborer",
+      "heading": "Parlons de votre projet.",
+      "primary": "Demander un devis"
+    }
+  },
+  "pricing": {
+    "hero": {
+      "eyebrow": "Tarifs",
+      "headline": "Une base claire. Un devis construit autour de votre projet.",
+      "sub": "Chaque projet est différent — voici comment nous raisonnons nos prix, avec des ordres de grandeur pour vous orienter."
+    },
+    "note": "À lire avant tout : les montants ci-dessous sont des points de départ indicatifs, pas des prix fermes. Le coût final dépend du périmètre exact, des intégrations (paiement, IA, données existantes) et de votre délai. Un devis précis suit un premier échange, sans engagement.",
+    "featuredLabel": "Le plus demandé",
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "desc": "Site vitrine ou landing page premium, prêt à convertir.",
+        "from": "À partir de",
+        "custom": "",
+        "features": ["Jusqu'à 6 pages", "Design sur mesure", "Responsive & SEO de base", "Formulaire de contact", "Hébergement configuré"],
+        "cta": "Demander un devis"
+      },
+      "business": {
+        "name": "Business",
+        "desc": "Plateforme complète : e-commerce, SaaS ou espace client.",
+        "from": "À partir de",
+        "custom": "",
+        "features": ["Tout Starter, plus :", "Authentification & espace client", "Paiement en ligne intégré", "Tableau de bord & statistiques", "3 mois de support inclus"],
+        "cta": "Demander un devis"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "desc": "Plateforme IA, système interne ou produit multi-modules sur mesure.",
+        "from": "Devis individualisé",
+        "custom": "Personnalisé",
+        "features": ["Architecture sur mesure", "Agents IA & automatisation", "Intégrations API avancées", "SLA & accompagnement dédié"],
+        "cta": "Parler à un expert"
+      }
+    },
+    "calculator": {
+      "kicker": "Vous ne savez pas par où commencer",
+      "heading": "Obtenez une estimation indicative en moins d'une minute.",
+      "typeLabel": "Type de projet",
+      "featuresLabel": "Ajoutez ce qui s'applique",
+      "resultLabel": "Budget estimé",
+      "disclaimer": "Budget estimé — le prix final dépend du périmètre exact. C'est un point de départ pour la conversation, pas un devis.",
+      "cta": "Transformer ceci en vrai devis",
+      "projectTypes": {
+        "website": "Site vitrine ou landing page",
+        "platform": "Plateforme web ou produit SaaS",
+        "mobile": "Application mobile",
+        "ai": "Projet IA ou automatisation"
+      },
+      "features": {
+        "auth": "Comptes utilisateurs & authentification",
+        "payments": "Intégration de paiement",
+        "dashboard": "Tableau de bord admin",
+        "integrations": "Intégrations tierces",
+        "multilang": "Support multilingue",
+        "ai": "Composant IA ou automatisation"
+      }
+    },
+    "faq": {
+      "kicker": "Questions fréquentes",
+      "heading": "Ce qu'on nous demande le plus souvent.",
+      "items": [
+        {
+          "question": "Comment est calculé le prix final d'un projet ?",
+          "answer": "Sur la base du périmètre fonctionnel réel (nombre de pages, intégrations, niveau de sécurité requis) et du délai souhaité. Nous évitons les forfaits flous : chaque ligne du devis est justifiée."
+        },
+        {
+          "question": "Un acompte est-il demandé au démarrage ?",
+          "answer": "Oui, un acompte est généralement demandé à la signature, avec le solde échelonné selon les jalons du projet. Les modalités exactes sont précisées dans chaque devis."
+        },
+        {
+          "question": "Proposez-vous un accompagnement après la mise en ligne ?",
+          "answer": "Oui, sous forme de forfait de maintenance mensuel (corrections, mises à jour de sécurité, petites évolutions) ou d'interventions ponctuelles selon vos besoins."
+        },
+        {
+          "question": "Les moyens de paiement locaux et régionaux sont-ils pris en charge ?",
+          "answer": "Nous intégrons techniquement les moyens de paiement adaptés à votre marché — Stripe et cartes bancaires pour les clients britanniques et internationaux, ou Wave et Orange Money pour le Sénégal et l'Afrique de l'Ouest. L'ouverture du compte marchand auprès de chaque opérateur reste à votre charge — c'est une exigence réglementaire, pas un choix technique."
+        }
+      ]
+    },
+    "cta": {
+      "kicker": "Encore un doute sur le budget",
+      "heading": "Décrivez votre projet, on vous dit précisément ce qu'il coûte.",
+      "primary": "Demander un devis"
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "headline": "Parlons de votre projet.",
+      "sub": "Remplissez le formulaire ci-dessous ou écrivez-nous directement — réponse sous 48h ouvrées."
+    },
+    "form": {
+      "sectionContact": "Vos coordonnées",
+      "name": "Nom complet",
+      "namePlaceholder": "Aminata Diallo",
+      "company": "Entreprise",
+      "companyPlaceholder": "Nom de votre structure",
+      "email": "Email",
+      "emailPlaceholder": "vous@entreprise.com",
+      "phone": "Téléphone / WhatsApp",
+      "phonePlaceholder": "+221 77 000 00 00",
+      "country": "Pays",
+      "countryPlaceholder": "Sélectionnez votre pays",
+      "sectionProject": "Votre projet",
+      "service": "Service recherché",
+      "serviceOptions": [
+        "Site web / landing page",
+        "Plateforme web / SaaS",
+        "Application mobile",
+        "Intelligence artificielle / agents IA",
+        "Cybersécurité / audit",
+        "Pas encore sûr / plusieurs besoins"
+      ],
+      "message": "Décrivez votre projet",
+      "messagePlaceholder": "Contexte, objectifs, délais souhaités...",
+      "budget": "Budget indicatif (FCFA)",
+      "budgetOptions": ["Moins de 1 000 000 FCFA", "1 000 000 – 3 500 000 FCFA", "3 500 000 – 10 000 000 FCFA", "Plus de 10 000 000 FCFA", "Je ne sais pas encore"],
+      "timeline": "Délai souhaité",
+      "timelineOptions": ["Dès que possible", "Sous 1 à 3 mois", "Sous 3 à 6 mois", "Je me renseigne pour l'instant"],
+      "sectionPreference": "Comment vous joindre",
+      "contactPreference": "Moyen de contact préféré",
+      "preferenceOptions": ["Email", "Appel téléphonique", "WhatsApp"],
+      "consent": "J'accepte d'être contacté(e) au sujet de cette demande. NGUERA SENEGALENSIS TECH n'utilisera ces informations que pour vous répondre — voir notre politique de confidentialité.",
+      "marketingConsent": "Je souhaite également recevoir occasionnellement des nouvelles de NGUERA SENEGALENSIS TECH (facultatif — désabonnement possible à tout moment).",
+      "submit": "Envoyer la demande",
+      "note": "Vos informations sont envoyées de façon sécurisée et utilisées uniquement pour répondre à cette demande — voir notre politique de confidentialité pour savoir comment nous traitons vos données.",
+      "successTitle": "Demande reçue.",
+      "successBody": "Merci — votre demande est bien arrivée à notre équipe. Vous recevrez un email de confirmation sous peu, et une réponse sous 48h ouvrées.",
+      "successReset": "Envoyer un autre message",
+      "duplicateTitle": "Déjà reçue.",
+      "duplicateBody": "Nous avons déjà reçu une demande depuis cette adresse email il y a quelques minutes — inutile de la renvoyer. Nous revenons vers vous sous 48h ouvrées.",
+      "rateLimitedTitle": "Trop de tentatives.",
+      "rateLimitedBody": "Vous avez soumis ce formulaire plusieurs fois en peu de temps. Merci de patienter quelques minutes avant de réessayer.",
+      "serverErrorTitle": "Un problème est survenu.",
+      "serverErrorBody": "Nous n'avons pas pu enregistrer votre demande pour l'instant. Merci de réessayer dans un instant, ou de nous écrire directement.",
+      "validationErrorBanner": "Merci de vérifier les champs signalés et de réessayer."
+    },
+    "info": {
+      "email": "Email",
+      "emailValue": "contact@ngueratech.com",
+      "emailNote": "(adresse à remplacer par la vôtre)",
+      "phone": "Téléphone / WhatsApp",
+      "phoneValue": "+221 XX XXX XX XX",
+      "phoneNote": "(numéro à remplacer par le vôtre)",
+      "office": "Bureau",
+      "officeValue": "Travail à distance — au service du Sénégal et de l'international",
+      "officeNote": "(adresse précise à ajouter si disponible)",
+      "availability": "Disponibilité",
+      "availabilityValue": "Lundi – Vendredi, 9h – 18h GMT",
+      "availabilityNote": "Réponse aux demandes sous 48h"
+    }
+  },
+  "thankYou": {
+    "eyebrow": "Demande reçue",
+    "headline": "Merci — votre demande est bien arrivée.",
+    "body": "Un email de confirmation est en route, et notre équipe vous répond sous 48h ouvrées avec une proposition claire — aucun engagement à ce stade.",
+    "backHome": "Retour à l'accueil",
+    "exploreServices": "Découvrir nos expertises"
+  },
+  "common": {
+    "language": "Langue",
+    "currency": "Devise"
+  }
+}

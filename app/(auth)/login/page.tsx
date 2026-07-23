@@ -66,7 +66,7 @@ export default function LoginPage() {
 
         <p className="form-note" style={{ marginTop: 20 }}>
           Pas encore de compte ? Les accès sont créés par notre équipe après signature du devis.
-          Contactez-nous depuis <a href="/contact" style={{ color: "var(--gold)" }}>la page contact</a>.
+          Contactez-nous depuis <a href="/fr/contact" style={{ color: "var(--gold)" }}>la page contact</a>.
         </p>
       </motion.div>
     </main>

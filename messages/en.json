@@ -1,0 +1,629 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "cta": "Request a quote"
+  },
+  "footer": {
+    "tagline": "Engineering intelligent digital systems for ambitious organisations.",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "careers": "Careers",
+    "blog": "Blog",
+    "documentation": "Documentation",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Settings",
+    "rights": "All rights reserved.",
+    "servingLine": "Serving clients in the United Kingdom and internationally.",
+    "liveClockLabel": "Local time in Dakar —"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Intelligent Digital Infrastructure",
+      "headline": "Engineering intelligent digital systems for ambitious organisations.",
+      "subhead": "We design AI solutions, software platforms and secure digital infrastructure for businesses in the United Kingdom and worldwide.",
+      "ctaPrimary": "Start a project",
+      "ctaSecondary": "Explore our capabilities",
+      "scrollHint": "Scroll to explore"
+    },
+    "narrative": {
+      "step1Label": "Global network",
+      "step1Text": "A distributed system of clients, data and infrastructure — connected, wherever they are.",
+      "step2Label": "Software architecture",
+      "step2Text": "That network becomes structure: modular systems built to be understood, extended, and trusted.",
+      "step3Label": "Live intelligence",
+      "step3Text": "Structure becomes a working interface — dashboards, automation and AI agents operating on real data.",
+      "step4Label": "Secure infrastructure",
+      "step4Text": "Underneath it all, infrastructure engineered for resilience, security and scale."
+    },
+    "capabilities": {
+      "kicker": "What we do",
+      "heading": "Twelve disciplines, one accountable team.",
+      "sub": "From first architecture decision to production support — nothing handed off, nothing outsourced.",
+      "items": [
+        { "name": "Artificial Intelligence", "desc": "Applied AI systems built around your data, not a generic model." },
+        { "name": "AI Agents and Automation", "desc": "Autonomous agents that handle real workflows, with human oversight built in." },
+        { "name": "Custom Software Development", "desc": "Business-critical systems engineered for your exact requirements." },
+        { "name": "Web Platforms", "desc": "High-performance web applications built to scale with your business." },
+        { "name": "Mobile Applications", "desc": "Native and cross-platform apps for iOS and Android." },
+        { "name": "SaaS Products", "desc": "Multi-tenant products with subscriptions, roles and permissions." },
+        { "name": "Cloud Infrastructure", "desc": "Resilient, scalable infrastructure with continuous deployment." },
+        { "name": "Cybersecurity", "desc": "Authentication, encryption and access control designed in from day one." },
+        { "name": "Data and Analytics", "desc": "Turning operational data into decisions your team can act on." },
+        { "name": "UI/UX Product Design", "desc": "Interfaces designed for the people who actually use them." },
+        { "name": "Systems Integration", "desc": "Connecting the tools you already use into one coherent system." },
+        { "name": "Technology Consulting", "desc": "Independent technical guidance for teams making high-stakes decisions." }
+      ]
+    },
+    "why": {
+      "kicker": "How we work",
+      "heading": "Built for organisations that can't afford to get this wrong.",
+      "point1Title": "International delivery standard",
+      "point1Text": "We work to the standard expected by UK and international clients — clear scope, clear timelines, clear accountability.",
+      "point2Title": "Security by design",
+      "point2Text": "Authentication, encryption and access control are architectural decisions, not features added at the end.",
+      "point3Title": "Code you actually own",
+      "point3Text": "Clean, documented architecture handed over in full — no hidden dependency on us to keep it running.",
+      "point4Title": "One team, every discipline",
+      "point4Text": "Design, engineering, AI and security under one roof — not five vendors you have to coordinate yourself."
+    },
+    "stack": {
+      "kicker": "Our stack",
+      "heading": "Proven technology, not trend-chasing."
+    },
+    "cta": {
+      "kicker": "Ready when you are",
+      "heading": "Let's talk about your project.",
+      "sub": "Clear proposal within 48 hours. No obligation on the first conversation.",
+      "primary": "Start a project",
+      "secondary": "Book a consultation"
+    }
+  },
+  "services": {
+    "hero": {
+      "eyebrow": "What we do",
+      "headline": "Twelve disciplines. One team that ships.",
+      "sub": "Select a discipline to see how we approach it — what it solves, how we deliver it, and the technology behind it."
+    },
+    "indexHint": "Disciplines",
+    "detailHint": "Select a discipline",
+    "labels": {
+      "benefits": "Benefits",
+      "problems": "Problems it solves",
+      "technologies": "Technologies",
+      "example": "In practice",
+      "cta": "Discuss this"
+    },
+    "process": {
+      "kicker": "How we deliver",
+      "heading": "The same process, whichever discipline you need.",
+      "steps": [
+        { "title": "Discover", "desc": "We start with your problem, not our tech stack — scope, constraints, and what success actually looks like." },
+        { "title": "Design", "desc": "Architecture and interface decisions made explicit before a line of production code is written." },
+        { "title": "Build", "desc": "Iterative delivery with visible progress — you see working software early, not just at the end." },
+        { "title": "Support", "desc": "Handover with full documentation, and continuity after launch if you need it." }
+      ]
+    },
+    "items": [
+      {
+        "slug": "artificial-intelligence",
+        "name": "Artificial Intelligence",
+        "tagline": "AI systems built around your data",
+        "description": "We design and build applied AI systems — models, pipelines and integrations — grounded in your actual data and workflows, not a generic off-the-shelf model wrapped in a chat window.",
+        "benefits": [
+          "Decisions and outputs grounded in your real data, not generic training",
+          "Clear boundaries on what the system can and can't do, agreed upfront",
+          "Built to integrate with the systems you already run"
+        ],
+        "problems": [
+          "Manual work that follows a repeatable pattern but hasn't been automated",
+          "Data that exists but isn't being used to inform decisions",
+          "Generic AI tools that don't understand your specific domain"
+        ],
+        "technologies": ["OpenAI", "Anthropic", "Python", "Vector databases", "RAG pipelines"],
+        "example": "A support team drowning in repetitive tickets could use a retrieval-augmented system trained on their own documentation to draft first-response answers for a human to review — cutting response time without removing human judgement from the loop.",
+        "cta": "Talk to us about AI"
+      },
+      {
+        "slug": "ai-agents-automation",
+        "name": "AI Agents and Automation",
+        "tagline": "Autonomous agents, human oversight",
+        "description": "Agents that carry out real, multi-step processes — checking data, taking actions across systems, and flagging what needs a human — rather than a single chatbot reply.",
+        "benefits": [
+          "Removes repetitive multi-step work from your team's plate",
+          "Human-in-the-loop checkpoints for anything with real consequences",
+          "Auditable — every action an agent takes is logged and traceable"
+        ],
+        "problems": [
+          "Staff time spent on multi-step processes that follow clear rules",
+          "Delays caused by manual handoffs between systems or people",
+          "Errors from manual data entry between disconnected tools"
+        ],
+        "technologies": ["LangChain", "n8n", "Node.js", "Webhooks", "API integrations"],
+        "example": "A business that manually re-keys data between a booking form and its invoicing system could have an agent do the transfer automatically, validate it against business rules, and only escalate to a person when something looks wrong.",
+        "cta": "Talk to us about automation"
+      },
+      {
+        "slug": "custom-software-development",
+        "name": "Custom Software Development",
+        "tagline": "Software built for your exact requirements",
+        "description": "Bespoke, business-critical software engineered around how your organisation actually operates, rather than a generic product bent to fit.",
+        "benefits": [
+          "No paying for features you don't need or working around ones you do",
+          "Built to scale with your business rather than needing a rebuild",
+          "You own the codebase and the architecture decisions behind it"
+        ],
+        "problems": [
+          "Off-the-shelf software that covers 80% of a need and fights you on the rest",
+          "Processes that live in spreadsheets because no tool fits them",
+          "Legacy systems that are too fragile to extend safely"
+        ],
+        "technologies": ["Next.js", "Node.js", "PostgreSQL", "TypeScript", "Docker"],
+        "example": "An operation running critical processes across three disconnected spreadsheets could have a single purpose-built system that reflects how the business actually works, with proper access control and an audit trail.",
+        "cta": "Discuss a custom build"
+      },
+      {
+        "slug": "web-platforms",
+        "name": "Web Platforms",
+        "tagline": "High-performance web applications",
+        "description": "Web platforms engineered for speed, reliability and growth — from marketing sites that convert to complex web applications that run your operation.",
+        "benefits": [
+          "Fast by default — performance treated as a requirement, not an afterthought",
+          "Built to handle real traffic and real usage growth",
+          "SEO and accessibility considered from the first architecture decision"
+        ],
+        "problems": [
+          "A site that's slow, hard to update, or breaks under real usage",
+          "A platform that can't be extended without a rebuild",
+          "Poor search visibility from technical debt baked into the foundations"
+        ],
+        "technologies": ["Next.js", "React", "TypeScript", "Vercel", "PostgreSQL"],
+        "example": "A growing business outgrowing a template-based website could move to a platform that's genuinely fast, correctly structured for search, and built to add new capability without starting over.",
+        "cta": "Discuss a web platform"
+      },
+      {
+        "slug": "mobile-applications",
+        "name": "Mobile Applications",
+        "tagline": "Native and cross-platform apps",
+        "description": "iOS and Android applications — native or cross-platform depending on what the product actually needs — connected to the same systems as the rest of your platform.",
+        "benefits": [
+          "Platform choice driven by your product's needs, not by default habit",
+          "Connected to your existing backend and data, not a silo",
+          "Built with app store review and release process in mind from day one"
+        ],
+        "problems": [
+          "Customers expecting a mobile app where you currently offer none",
+          "An existing app that's slow, unreliable, or hard to update",
+          "Field or frontline staff needing mobile access to systems that are currently desktop-only"
+        ],
+        "technologies": ["React Native", "Swift", "Kotlin", "Expo", "Push notifications"],
+        "example": "A service business whose staff currently fill in paper forms in the field could get a mobile app that captures the same information digitally and syncs it straight into the back office.",
+        "cta": "Discuss a mobile app"
+      },
+      {
+        "slug": "saas-products",
+        "name": "SaaS Products",
+        "tagline": "Multi-tenant products, built to scale",
+        "description": "SaaS products architected from the outset for multiple customers, subscription billing, roles and permissions — the infrastructure a real product needs, not a single-customer app relabelled.",
+        "benefits": [
+          "Multi-tenant architecture that scales to your next customer, not just your first",
+          "Subscription and billing logic built in from the start",
+          "Role-based access so each customer only sees what they should"
+        ],
+        "problems": [
+          "An idea validated with one customer that now needs to serve many",
+          "A product that needs proper account, team and billing structures",
+          "Uncertainty about how to architect for multiple tenants safely"
+        ],
+        "technologies": ["Next.js", "Stripe", "PostgreSQL", "Prisma", "Supabase"],
+        "example": "A tool built to solve one company's internal problem could be re-architected into a proper multi-tenant SaaS product, with each customer's data correctly isolated and its own billing plan.",
+        "cta": "Discuss a SaaS build"
+      },
+      {
+        "slug": "cloud-infrastructure",
+        "name": "Cloud Infrastructure",
+        "tagline": "Resilient infrastructure, continuous deployment",
+        "description": "Cloud infrastructure designed for resilience and scale, with automated deployment pipelines so releases are routine, not risky.",
+        "benefits": [
+          "Infrastructure that scales with demand instead of falling over under it",
+          "Continuous deployment — releases become low-risk and frequent",
+          "Monitoring and alerting so problems are caught before customers notice"
+        ],
+        "problems": [
+          "Downtime during releases or traffic spikes",
+          "Manual, error-prone deployment processes",
+          "No visibility into system health until something breaks"
+        ],
+        "technologies": ["AWS", "Vercel", "Docker", "GitHub Actions", "Terraform"],
+        "example": "A platform that currently requires a manual, out-of-hours deployment process could move to automated, zero-downtime deployments with monitoring that flags issues before customers ever see them.",
+        "cta": "Discuss your infrastructure"
+      },
+      {
+        "slug": "cybersecurity",
+        "name": "Cybersecurity",
+        "tagline": "Security designed in, not bolted on",
+        "description": "Authentication, encryption and access control treated as architecture decisions from the start — the practical security work that protects a real system in production.",
+        "benefits": [
+          "Strong authentication and access control as a foundation, not an add-on",
+          "Data encrypted in transit and at rest by default",
+          "Access logging so you know who did what, and when"
+        ],
+        "problems": [
+          "Systems handling sensitive data without proper access control",
+          "No clear answer to 'who can see this, and why'",
+          "Security treated as a checklist item after launch rather than a design input"
+        ],
+        "technologies": ["OAuth 2.0", "Row-level security", "TLS/SSL", "Rate limiting", "Audit logging"],
+        "example": "A platform storing customer records without row-level access control could have that control retrofitted so each customer's data is strictly isolated from every other customer's, with every access logged.",
+        "cta": "Discuss security"
+      },
+      {
+        "slug": "data-analytics",
+        "name": "Data and Analytics",
+        "tagline": "Operational data into decisions",
+        "description": "Turning the data your systems already generate into dashboards and reports your team can actually act on, rather than raw numbers nobody has time to interpret.",
+        "benefits": [
+          "Decisions based on what's actually happening, not what people assume is happening",
+          "Dashboards built around the questions your team actually asks",
+          "Data pipelines that stay accurate as your systems change"
+        ],
+        "problems": [
+          "Data spread across systems with no single accurate view",
+          "Reports that take days to compile manually",
+          "No reliable way to answer 'how is the business actually performing?'"
+        ],
+        "technologies": ["PostgreSQL", "Metabase", "dbt", "Python", "REST APIs"],
+        "example": "A business making decisions from a monthly manually-assembled spreadsheet could move to a live dashboard pulling directly from its operational systems, cutting reporting time from days to real time.",
+        "cta": "Discuss your data"
+      },
+      {
+        "slug": "ui-ux-design",
+        "name": "UI/UX Product Design",
+        "tagline": "Interfaces for real users",
+        "description": "Product design grounded in how the people who actually use your software work — not visual trends borrowed from unrelated products.",
+        "benefits": [
+          "Interfaces designed around real user tasks, not aesthetic trends",
+          "Consistent design system that speeds up every future feature",
+          "Accessibility considered as a requirement, not an afterthought"
+        ],
+        "problems": [
+          "A product that's functional but confusing to actually use",
+          "Inconsistent interfaces that slow teams down and erode trust",
+          "Features that get built but go unused because they're hard to find"
+        ],
+        "technologies": ["Figma", "Design systems", "WCAG accessibility", "Prototyping", "User testing"],
+        "example": "An internal tool built feature-by-feature over several years, now inconsistent and slow to use, could be redesigned around a coherent design system without disrupting the workflows staff already rely on.",
+        "cta": "Discuss product design"
+      },
+      {
+        "slug": "systems-integration",
+        "name": "Systems Integration",
+        "tagline": "Your existing tools, working as one",
+        "description": "Connecting the software you already use — CRM, invoicing, payments, internal tools — into one coherent system instead of a set of disconnected accounts.",
+        "benefits": [
+          "Data entered once, available everywhere it's needed",
+          "Fewer manual handoffs between disconnected tools",
+          "A single source of truth instead of three slightly different ones"
+        ],
+        "problems": [
+          "The same information re-entered manually into multiple systems",
+          "Tools that don't talk to each other, forcing manual reconciliation",
+          "No single accurate view because data lives in silos"
+        ],
+        "technologies": ["REST APIs", "Webhooks", "Zapier/n8n", "GraphQL", "Custom middleware"],
+        "example": "A business re-entering the same customer details into its CRM, its invoicing tool and its support desk could have those systems connected so a single update flows everywhere automatically.",
+        "cta": "Discuss an integration"
+      },
+      {
+        "slug": "technology-consulting",
+        "name": "Technology Consulting",
+        "tagline": "Independent guidance for high-stakes decisions",
+        "description": "Technical advisory for organisations facing a decision they can't afford to get wrong — architecture direction, vendor evaluation, technical due diligence, or a second opinion before a major investment.",
+        "benefits": [
+          "Independent judgement — no incentive to sell you a specific product",
+          "Grounded in delivery experience, not slide-deck theory",
+          "A clear, honest answer, including when the answer is 'don't build this yet'"
+        ],
+        "problems": [
+          "A major technical decision with no independent expert to sanity-check it",
+          "Uncertainty about whether an existing system can scale or needs replacing",
+          "Evaluating a vendor or agency proposal without in-house technical expertise"
+        ],
+        "technologies": ["Architecture review", "Technical due diligence", "Vendor evaluation", "Roadmapping"],
+        "example": "A leadership team about to commit significant budget to a platform rebuild could get an independent technical review first, to confirm the plan is sound before the spend is committed.",
+        "cta": "Book a consultation"
+      }
+    ],
+    "cta": {
+      "kicker": "Not sure which discipline you need",
+      "heading": "Tell us the problem. We'll tell you how we'd approach it.",
+      "sub": "Most projects touch more than one discipline — that's exactly why we work as one team.",
+      "primary": "Start a project",
+      "secondary": "View pricing"
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "eyebrow": "Selected work",
+      "headline": "How we think, shown in practice.",
+      "sub": "The pieces below are demonstration builds and concepts — created to show our approach and craft. They are not client work. As real projects ship, they'll be published here as case studies, clearly identified as such."
+    },
+    "badges": {
+      "demo": "Demonstration project",
+      "concept": "Concept"
+    },
+    "items": [
+      {
+        "slug": "ecommerce",
+        "badge": "demo",
+        "title": "E-commerce storefront",
+        "desc": "A demonstration of a full commerce platform — catalogue, cart, mobile-money and card checkout, and order management built for real operational use, not just a mockup.",
+        "tags": ["Next.js", "Stripe / Wave", "Multi-category catalogue"]
+      },
+      {
+        "slug": "saas-dashboard",
+        "badge": "demo",
+        "title": "SaaS analytics dashboard",
+        "desc": "An example client workspace with live project tracking, revenue and activity — the kind of interface we build for SaaS clients running multi-tenant products.",
+        "tags": ["Live dashboard", "Multi-tenant", "Role-based access"]
+      },
+      {
+        "slug": "security-platform",
+        "badge": "concept",
+        "title": "Security operations platform",
+        "desc": "A concept interface for a security monitoring workspace — threat detection, audit trails and compliance status, designed for how a SOC team actually works.",
+        "tags": ["Audit trail", "Compliance", "24/7 monitoring"]
+      },
+      {
+        "slug": "ai-agents",
+        "badge": "concept",
+        "title": "AI agents for business operations",
+        "desc": "A concept showing an AI agent connected to a company's own data, handling support, sales enquiries or analysis with a human able to step in at any point.",
+        "tags": ["OpenAI", "Anthropic", "Workflow automation"]
+      },
+      {
+        "slug": "cloud-infrastructure",
+        "badge": "concept",
+        "title": "Scalable cloud infrastructure",
+        "desc": "An architecture concept for infrastructure built for high availability and progressive scale — the kind of foundation we design before writing a line of application code.",
+        "tags": ["Cloud architecture", "CI/CD", "Auto-scaling"]
+      },
+      {
+        "slug": "mobile-tracking",
+        "badge": "demo",
+        "title": "Mobile tracking application",
+        "desc": "A demonstration mobile app with a statistics dashboard and recent activity feed — the pattern we use for field and operations apps.",
+        "tags": ["iOS", "Android", "Cross-platform"]
+      }
+    ],
+    "cta": {
+      "kicker": "Have a project in mind",
+      "heading": "Let's make your project our next real case study.",
+      "primary": "Request a quote"
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "About us",
+      "headline": "A technology company with an international standard.",
+      "sub": "NGUERA SENEGALENSIS TECH designs AI systems, software and digital infrastructure for organisations in the United Kingdom and worldwide — built to the same standard, wherever the client is."
+    },
+    "origin": {
+      "kicker": "Where we started",
+      "heading": "Built in Senegal. Designed for the world.",
+      "body": "We were founded in Senegal, and that origin shapes how we work — resourceful, direct, and unwilling to cut corners just because a client is far away. But the standard we hold ourselves to isn't a regional one. We work remotely with clients across the United Kingdom, Europe, North America and the Middle East as a matter of course, not an exception."
+    },
+    "mission": {
+      "kicker": "Our mission",
+      "heading": "Build the digital infrastructure our clients grow on.",
+      "body": "We don't deliver an isolated website or app and move on. We build technical and creative foundations meant to last — architecture, security and design decisions made properly the first time, so our clients aren't rebuilding in eighteen months."
+    },
+    "approach": {
+      "kicker": "How we work",
+      "heading": "The standards we don't compromise on.",
+      "points": [
+        {
+          "title": "Scope and timelines in writing",
+          "desc": "Before work starts, you know what's being built, by when, and what happens if that changes — no ambiguity to hide behind later."
+        },
+        {
+          "title": "Security and architecture, not just features",
+          "desc": "Authentication, data handling and system design are decided deliberately, not left as an afterthought once the interface looks finished."
+        },
+        {
+          "title": "Remote-first, timezone-aware delivery",
+          "desc": "We work asynchronously and across time zones as standard practice, with clear communication cadence agreed upfront — distance isn't an excuse for silence."
+        },
+        {
+          "title": "Full handover, no lock-in",
+          "desc": "You receive documented, clean code and full ownership of what we build — our value is the work itself, not making it hard to leave."
+        }
+      ]
+    },
+    "expertise": {
+      "kicker": "Our team",
+      "heading": "The disciplines our team covers.",
+      "sub": "Individual profiles — names, roles and photos — will be published here as our public team page grows. Below are the areas our team works in today.",
+      "areas": [
+        { "role": "Software Engineering", "desc": "Web, mobile and business-critical systems" },
+        { "role": "Artificial Intelligence", "desc": "AI agents, automation, applied machine learning" },
+        { "role": "Security & Infrastructure", "desc": "Cybersecurity, cloud architecture, DevOps" },
+        { "role": "Product & Design", "desc": "UI/UX, design systems, brand identity" }
+      ]
+    },
+    "cta": {
+      "kicker": "Want to work together",
+      "heading": "Let's talk about your project.",
+      "primary": "Request a quote"
+    }
+  },
+  "pricing": {
+    "hero": {
+      "eyebrow": "Pricing",
+      "headline": "A clear starting point. A quote built around your project.",
+      "sub": "Every project is different — here's how we think about price, with figures to orient you."
+    },
+    "note": "Please read before anything else: the figures below are indicative starting points, not fixed prices. The final cost depends on exact scope, integrations (payments, AI, existing data) and your timeline. A precise quote follows a first conversation, with no obligation.",
+    "featuredLabel": "Most requested",
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "desc": "A premium landing page or brochure site, ready to convert.",
+        "from": "From",
+        "custom": "",
+        "features": ["Up to 6 pages", "Custom design", "Responsive & baseline SEO", "Contact form", "Hosting configured"],
+        "cta": "Request a quote"
+      },
+      "business": {
+        "name": "Business",
+        "desc": "A full platform: e-commerce, SaaS, or a client workspace.",
+        "from": "From",
+        "custom": "",
+        "features": ["Everything in Starter, plus:", "Authentication & client area", "Integrated online payments", "Dashboard & analytics", "3 months of support included"],
+        "cta": "Request a quote"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "desc": "An AI platform, internal system, or custom multi-module product.",
+        "from": "Quoted individually",
+        "custom": "Custom",
+        "features": ["Bespoke architecture", "AI agents & automation", "Advanced API integrations", "SLA & dedicated support"],
+        "cta": "Talk to an expert"
+      }
+    },
+    "calculator": {
+      "kicker": "Not sure where to start",
+      "heading": "Get an indicative estimate in under a minute.",
+      "typeLabel": "Type of project",
+      "featuresLabel": "Add anything that applies",
+      "resultLabel": "Estimated budget",
+      "disclaimer": "Estimated budget — final pricing depends on scope. This is a starting point for conversation, not a quote.",
+      "cta": "Turn this into a real quote",
+      "projectTypes": {
+        "website": "Website or landing page",
+        "platform": "Web platform or SaaS product",
+        "mobile": "Mobile application",
+        "ai": "AI or automation project"
+      },
+      "features": {
+        "auth": "User accounts & authentication",
+        "payments": "Payments integration",
+        "dashboard": "Admin dashboard",
+        "integrations": "Third-party integrations",
+        "multilang": "Multi-language support",
+        "ai": "AI or automation component"
+      }
+    },
+    "faq": {
+      "kicker": "Frequently asked",
+      "heading": "What we're asked most often.",
+      "items": [
+        {
+          "question": "How is the final project price calculated?",
+          "answer": "Based on the actual functional scope — number of pages, integrations, required security level — and your desired timeline. We avoid vague packages: every line of a quote is justified."
+        },
+        {
+          "question": "Is a deposit required to start?",
+          "answer": "Yes, a deposit is typically required at signature, with the balance staged against project milestones. Exact terms are set out in each quote."
+        },
+        {
+          "question": "Do you offer support after launch?",
+          "answer": "Yes, either as a monthly maintenance plan (fixes, security updates, small improvements) or one-off engagements depending on your needs."
+        },
+        {
+          "question": "Are local and regional payment methods supported?",
+          "answer": "We integrate the payment methods relevant to your market technically — Stripe and cards for UK/international clients, or Wave and Orange Money for Senegal and West Africa. Opening the merchant account with each provider remains your responsibility — that's a regulatory requirement, not a technical choice."
+        }
+      ]
+    },
+    "cta": {
+      "kicker": "Still unsure about budget",
+      "heading": "Describe your project — we'll tell you exactly what it costs.",
+      "primary": "Request a quote"
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "headline": "Let's talk about your project.",
+      "sub": "Fill in the form below or write to us directly — we reply within 48 working hours."
+    },
+    "form": {
+      "sectionContact": "Your details",
+      "name": "Full name",
+      "namePlaceholder": "Jane Smith",
+      "company": "Company",
+      "companyPlaceholder": "Your organisation's name",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "phone": "Phone / WhatsApp",
+      "phonePlaceholder": "+44 7000 000000",
+      "country": "Country",
+      "countryPlaceholder": "Select your country",
+      "sectionProject": "Your project",
+      "service": "Service you're looking for",
+      "serviceOptions": [
+        "Website / landing page",
+        "Web platform / SaaS",
+        "Mobile application",
+        "Artificial intelligence / AI agents",
+        "Cybersecurity / audit",
+        "Not sure yet / multiple needs"
+      ],
+      "message": "Describe your project",
+      "messagePlaceholder": "Context, goals, desired timeline...",
+      "budget": "Indicative budget (GBP)",
+      "budgetOptions": ["Under £1,000", "£1,000 – £3,500", "£3,500 – £10,000", "Over £10,000", "Not sure yet"],
+      "timeline": "Timeline",
+      "timelineOptions": ["As soon as possible", "Within 1–3 months", "Within 3–6 months", "Just exploring for now"],
+      "sectionPreference": "How should we reach you",
+      "contactPreference": "Preferred contact method",
+      "preferenceOptions": ["Email", "Phone call", "WhatsApp"],
+      "consent": "I agree to be contacted about this enquiry. NGUERA SENEGALENSIS TECH will only use these details to respond — see our Privacy Policy.",
+      "marketingConsent": "I'd also like to receive occasional updates about NGUERA SENEGALENSIS TECH (optional — you can unsubscribe anytime).",
+      "submit": "Send request",
+      "note": "Your details are sent securely and used only to respond to this enquiry — see our Privacy Policy for how we handle your data.",
+      "successTitle": "Request received.",
+      "successBody": "Thank you — your request has reached our team. You'll receive a confirmation email shortly, and a reply within 48 working hours.",
+      "successReset": "Send another",
+      "duplicateTitle": "Already received.",
+      "duplicateBody": "We've already got a request from this email address in the last few minutes — no need to send it again. We'll be in touch within 48 working hours.",
+      "rateLimitedTitle": "Too many requests.",
+      "rateLimitedBody": "You've submitted this form several times in a short period. Please wait a few minutes before trying again.",
+      "serverErrorTitle": "Something went wrong.",
+      "serverErrorBody": "We couldn't save your request just now. Please try again in a moment, or email us directly.",
+      "validationErrorBanner": "Please check the highlighted fields and try again."
+    },
+    "info": {
+      "email": "Email",
+      "emailValue": "contact@ngueratech.com",
+      "emailNote": "(placeholder — to be replaced with your address)",
+      "phone": "Phone / WhatsApp",
+      "phoneValue": "+44 XXXX XXXXXX",
+      "phoneNote": "(placeholder — to be replaced with your number)",
+      "office": "Office",
+      "officeValue": "Remote-first — serving the UK and worldwide",
+      "officeNote": "(add a registered address here once available)",
+      "availability": "Availability",
+      "availabilityValue": "Monday – Friday, 9am – 6pm GMT",
+      "availabilityNote": "Enquiries answered within 48 hours"
+    }
+  },
+  "thankYou": {
+    "eyebrow": "Request received",
+    "headline": "Thank you — we've got your request.",
+    "body": "A confirmation email is on its way, and our team will reply within 48 working hours with a clear proposal — no obligation on this first conversation.",
+    "backHome": "Back to homepage",
+    "exploreServices": "Explore our capabilities"
+  },
+  "common": {
+    "language": "Language",
+    "currency": "Currency"
+  }
+}

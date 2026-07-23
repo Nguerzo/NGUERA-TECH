@@ -94,3 +94,63 @@ model Document {
 
   @@index([projectId])
 }
+
+// Phase 4 — capture des prospects (formulaire de contact public).
+// Écrit uniquement depuis app/actions/lead.ts (Server Action, clé DATABASE_URL
+// côté serveur) — jamais depuis le navigateur.
+enum LeadStatus {
+  NOUVEAU
+  A_CONTACTER
+  QUALIFIE
+  PROPOSITION_ENVOYEE
+  GAGNE
+  PERDU
+}
+
+enum LeadLocale {
+  en
+  fr
+}
+
+model Lead {
+  id                 String     @id @default(uuid())
+  fullName           String
+  company            String?
+  email              String
+  phone              String?
+  country            String?
+  service            String?
+  projectDescription String?
+  budget             String?
+  currency           String?
+  timeline           String?
+  contactPreference  String?
+  gdprConsent        Boolean    @default(false)
+  marketingConsent   Boolean    @default(false)
+  locale             LeadLocale @default(en)
+  source             String     @default("website_contact_form")
+  status             LeadStatus @default(NOUVEAU)
+  confirmationEmailSentAt DateTime?
+  adminNotifiedAt    DateTime?
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+}
+
+// Journal de toutes les tentatives de soumission (réussies ou non) — sert au
+// rate limiting (comptage par ipHash) et à la traçabilité des erreurs/spam.
+// L'IP n'est jamais stockée en clair : ipHash = sha256(ip + salt).
+model ContactAttempt {
+  id        String   @id @default(uuid())
+  ipHash    String
+  email     String?
+  outcome   String   // success | duplicate | rate_limited | spam | validation_error | server_error | email_error
+  detail    String?
+  createdAt DateTime @default(now())
+
+  @@index([ipHash, createdAt])
+  @@index([email, createdAt])
+}

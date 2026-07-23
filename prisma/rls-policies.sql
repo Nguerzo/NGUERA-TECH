@@ -47,3 +47,26 @@ create policy "document_client_read_own" on "Document"
 -- la phase 3 est volontairement en lecture seule. Les écritures (phase 4+)
 -- passeront par des routes serveur qui utilisent la clé service_role,
 -- jamais directement depuis le navigateur du client.
+
+-- Phase 4 — Lead / ContactAttempt (formulaire de contact public).
+-- RLS activé, AUCUNE policy créée pour anon/authenticated : ces tables ne sont
+-- accessibles ni en lecture ni en écriture via l'API PostgREST/anon key.
+-- Toutes les opérations passent par app/actions/lead.ts, qui utilise Prisma
+-- via DATABASE_URL (rôle postgres, exécuté uniquement côté serveur — jamais
+-- exposé au navigateur). C'est la même défense en profondeur que pour les
+-- tables ci-dessus : même en cas de bug applicatif ou de fuite de la clé anon,
+-- personne ne peut lire ou écrire un prospect directement depuis le client.
+alter table "Lead" enable row level security;
+alter table "ContactAttempt" enable row level security;
+
+-- L'équipe interne (TEAM/ADMIN) peut consulter les prospects depuis le futur
+-- back-office admin, en réutilisant la même fonction current_user_role()
+-- que pour Project/Invoice — pas de nouvelle surface d'accès à auditer.
+create policy "lead_team_read" on "Lead"
+  for select using (current_user_role() in ('TEAM', 'ADMIN'));
+
+create policy "lead_team_update" on "Lead"
+  for update using (current_user_role() in ('TEAM', 'ADMIN'));
+
+-- ContactAttempt reste un journal interne : aucune policy de lecture, même
+-- pour TEAM/ADMIN — consultez-le via Prisma Studio ou SQL direct si besoin.
