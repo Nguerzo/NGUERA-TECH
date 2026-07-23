@@ -4,13 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { LayoutDashboard, Contact, Users, FolderKanban, FileText, Receipt, LogOut, Menu, ArrowLeft } from "lucide-react";
+import { LayoutDashboard, Contact, Users, FolderKanban, FileText, Receipt, FileSignature, FolderOpen, CalendarDays, Settings, ShieldCheck, LogOut, Menu, ArrowLeft } from "lucide-react";
 import LogoMark from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "./ThemeToggle";
+import { NotificationBell, type NotificationItem } from "./NotificationBell";
 import { cn } from "@/lib/utils";
 
 const NAV = [
@@ -20,6 +21,11 @@ const NAV = [
   { href: "/admin/projects", label: "Projets", icon: FolderKanban },
   { href: "/admin/quotes", label: "Devis", icon: FileText },
   { href: "/admin/invoices", label: "Factures", icon: Receipt },
+  { href: "/admin/contracts", label: "Contrats", icon: FileSignature },
+  { href: "/admin/files", label: "Fichiers", icon: FolderOpen },
+  { href: "/admin/calendar", label: "Calendrier", icon: CalendarDays },
+  { href: "/admin/settings", label: "Paramètres", icon: Settings },
+  { href: "/admin/security", label: "Sécurité", icon: ShieldCheck },
 ];
 
 function initials(name: string) {
@@ -103,10 +109,12 @@ export default function PortalShell({
   children,
   userName,
   userRole,
+  notifications,
 }: {
   children: React.ReactNode;
   userName: string;
   userRole: string;
+  notifications: NotificationItem[];
 }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -144,7 +152,10 @@ export default function PortalShell({
             </div>
           </div>
           <div className="hidden md:block" />
-          <ThemeToggle />
+          <div className="flex items-center gap-1">
+            <NotificationBell notifications={notifications} />
+            <ThemeToggle />
+          </div>
         </header>
 
         <main className="flex-1 px-4 py-6 md:px-8 md:py-8">{children}</main>

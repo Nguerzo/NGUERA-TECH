@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { requireRole } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { createClientUser } from "@/lib/clients/create";
+import { logAudit } from "@/lib/audit/log";
 
 const createClientSchema = z.object({
   email: z.string().email("Adresse email invalide"),
@@ -20,7 +21,7 @@ export async function createClientAccount(
   _prevState: CreateClientState,
   formData: FormData
 ): Promise<CreateClientState> {
-  await requireRole(["ADMIN", "TEAM"]);
+  const actor = await requireRole(["ADMIN", "TEAM"]);
 
   const parsed = createClientSchema.safeParse({
     email: formData.get("email"),
@@ -36,6 +37,14 @@ export async function createClientAccount(
 
   const result = await createClientUser(parsed.data);
   if (!result.ok) return { error: result.error };
+
+  await logAudit({
+    actorId: actor.id,
+    action: "client.create",
+    entityType: "User",
+    entityId: result.userId,
+    detail: `${parsed.data.fullName} (${parsed.data.email})`,
+  });
 
   revalidatePath("/admin/clients");
   return { success: true };
@@ -86,6 +95,14 @@ export async function convertLeadToClient(
       },
     }),
   ]);
+
+  await logAudit({
+    actorId: user.id,
+    action: "lead.convert_to_client",
+    entityType: "Lead",
+    entityId: lead.id,
+    detail: `${lead.fullName} (${lead.email}) → client ${result.userId}`,
+  });
 
   revalidatePath("/admin/clients");
   revalidatePath("/admin/crm");

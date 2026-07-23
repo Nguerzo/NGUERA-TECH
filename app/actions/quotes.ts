@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
 import { requireRole } from "@/lib/auth";
 import { createQuoteSchema, quoteStatusValues } from "@/lib/validation/quotes";
+import { notifyStaff } from "@/lib/notifications/create";
 import type { QuoteStatus } from "@prisma/client";
 
 export type ActionResult = { ok: true; id?: string } | { ok: false; error: string };
@@ -66,6 +67,11 @@ export async function createQuote(_prevState: ActionResult, formData: FormData):
         },
       });
       revalidatePath("/admin/quotes");
+      await notifyStaff({
+        title: "Devis créé",
+        message: `${quote.number} pour ${client.fullName}`,
+        link: `/admin/quotes/${quote.id}`,
+      });
       return { ok: true, id: quote.id };
     } catch (err) {
       const isUniqueConflict = typeof err === "object" && err !== null && "code" in err && err.code === "P2002";

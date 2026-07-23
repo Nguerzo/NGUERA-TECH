@@ -54,6 +54,11 @@ model User {
   convertedFromLead Lead?            @relation("LeadConvertedClient")
   quotes            Quote[]          @relation("QuoteClient")
   quotesCreated     Quote[]          @relation("QuoteCreatedBy")
+  contracts         Contract[]       @relation("ContractClient")
+  contractsUploaded Contract[]       @relation("ContractUploadedBy")
+  calendarEvents    CalendarEvent[]  @relation("CalendarEventCreatedBy")
+  notifications     Notification[]
+  auditLogs         AuditLog[]
 }
 
 model Project {
@@ -69,6 +74,8 @@ model Project {
   documents     Document[]
   invoices      Invoice[]
   quotes        Quote[]
+  contracts     Contract[]
+  events        CalendarEvent[]
   createdAt     DateTime      @default(now())
 
   @@index([clientId])
@@ -250,4 +257,104 @@ model ContactAttempt {
 
   @@index([ipHash, createdAt])
   @@index([email, createdAt])
+}
+
+// Module Contrats (phase 5, module 7). "Signature électronique prévue" :
+// signedAt/signedBy existent pour marquer un contrat comme signé manuellement
+// aujourd'hui ; un vrai fournisseur de signature électronique (DocuSign,
+// Yousign...) n'est PAS encore intégré — voir la note honnête dans l'UI.
+enum ContractStatus {
+  BROUILLON
+  ENVOYE
+  SIGNE
+}
+
+model Contract {
+  id           String         @id @default(uuid())
+  title        String
+  client       User           @relation("ContractClient", fields: [clientId], references: [id])
+  clientId     String
+  project      Project?       @relation(fields: [projectId], references: [id])
+  projectId    String?
+  status       ContractStatus @default(BROUILLON)
+  fileName     String
+  filePath     String
+  fileSize     Int
+  contentType  String
+  signedAt     DateTime?
+  uploadedBy   User           @relation("ContractUploadedBy", fields: [uploadedById], references: [id])
+  uploadedById String
+  createdAt    DateTime       @default(now())
+
+  @@index([clientId])
+}
+
+enum CalendarEventType {
+  REUNION
+  DEADLINE
+  LIVRAISON
+}
+
+model CalendarEvent {
+  id          String            @id @default(uuid())
+  title       String
+  type        CalendarEventType
+  startAt     DateTime
+  endAt       DateTime?
+  description String?
+  project     Project?          @relation(fields: [projectId], references: [id])
+  projectId   String?
+  createdBy   User              @relation("CalendarEventCreatedBy", fields: [createdById], references: [id])
+  createdById String
+  createdAt   DateTime          @default(now())
+
+  @@index([startAt])
+}
+
+// Notifications in-app (module 10). Fan-out à l'écriture : un événement
+// (nouveau prospect, devis créé, facture payée...) crée une ligne par
+// membre ADMIN/TEAM concerné plutôt qu'un modèle d'abonnement — suffisant
+// pour une petite équipe, à revoir si l'équipe grandit significativement.
+model Notification {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  title     String
+  message   String
+  link      String?
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([userId, read, createdAt])
+}
+
+// Module 11 — une seule ligne (id fixé à "default") : il n'y a qu'une
+// entreprise. Pas de table de configuration multi-tenant tant qu'il n'y a
+// qu'un seul client de la plateforme (NGUERA SENEGALENSIS TECH elle-même).
+model CompanySettings {
+  id                 String   @id @default("default")
+  companyName        String   @default("NGUERA SENEGALENSIS TECH")
+  companyEmail       String?
+  companyPhone       String?
+  defaultCurrency    String   @default("GBP")
+  supportedCurrencies String[] @default(["GBP", "FCFA", "EUR", "USD"])
+  supportedLocales   String[] @default(["en", "fr"])
+  updatedAt          DateTime @updatedAt
+}
+
+// Module 12 — journal d'audit. Volontairement scopé aux actions sensibles
+// (changement de rôle, conversion prospect→client...) plutôt qu'à chaque
+// mutation de l'application, pour rester lisible.
+model AuditLog {
+  id         String   @id @default(uuid())
+  actor      User     @relation(fields: [actorId], references: [id])
+  actorId    String
+  action     String
+  entityType String
+  entityId   String?
+  detail     String?
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([actorId, createdAt])
 }

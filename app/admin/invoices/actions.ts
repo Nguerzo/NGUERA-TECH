@@ -4,6 +4,7 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { requireRole } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { notifyStaff } from "@/lib/notifications/create";
 import type { InvoiceStatus } from "@prisma/client";
 
 const INVOICE_STATUSES = ["BROUILLON", "ENVOYEE", "PAYEE", "EN_RETARD"] as const;
@@ -86,10 +87,19 @@ export async function updateInvoiceStatus(invoiceId: string, status: InvoiceStat
     return { ok: false, error: "Statut invalide" };
   }
 
-  await db.invoice.update({
+  const invoice = await db.invoice.update({
     where: { id: invoiceId },
     data: { status, paidAt: status === "PAYEE" ? new Date() : null },
+    include: { client: true },
   });
+
+  if (status === "PAYEE") {
+    await notifyStaff({
+      title: "Facture payée",
+      message: `${invoice.number} — ${invoice.client.fullName}`,
+      link: `/admin/invoices/${invoiceId}`,
+    });
+  }
 
   revalidatePath("/admin/invoices");
   revalidatePath(`/admin/invoices/${invoiceId}`);

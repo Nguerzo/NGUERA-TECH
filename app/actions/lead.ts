@@ -10,6 +10,7 @@ import {
 } from "@/lib/leads/guard";
 import { getRequestIp, hashIp } from "@/lib/leads/ip";
 import { sendLeadConfirmationEmail, sendAdminNotificationEmail } from "@/lib/email/resend";
+import { notifyStaff } from "@/lib/notifications/create";
 
 export type SubmitLeadResult =
   | { status: "idle" }
@@ -124,6 +125,11 @@ export async function submitLead(
   }
 
   await logAttempt(ipHash, data.email, "success");
+  await notifyStaff({
+    title: "Nouveau prospect",
+    message: `${data.fullName}${data.company ? ` (${data.company})` : ""} vient de soumettre une demande.`,
+    link: "/admin/crm",
+  });
 
   // The lead is safely stored — emails are best-effort from here on and must
   // never turn an already-successful submission into an error for the user.

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { db } from "@/lib/db";
 import { StatCard } from "@/components/portal/StatCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { UserPlus, FolderKanban, Wallet, FileText, ArrowUpRight } from "lucide-react";
 
 function formatMoney(amount: number, currency: string) {
@@ -133,12 +132,6 @@ export default async function AdminDashboardPage() {
           )}
         </CardContent>
       </Card>
-
-      <div>
-        <Badge variant="outline" className="font-mono text-[10px]">
-          NOTIFICATIONS — MODULE À VENIR
-        </Badge>
-      </div>
     </div>
   );
 }
