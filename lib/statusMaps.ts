@@ -8,9 +8,11 @@ export const INVOICE_STATUS: Record<string, { label: string; variant: "neutral" 
 };
 
 export const PROJECT_STATUS: Record<string, { label: string; variant: "neutral" | "cyan" | "gold" | "danger" | "violet" }> = {
-  DEVIS: { label: "Devis", variant: "neutral" },
-  EN_COURS: { label: "En cours", variant: "cyan" },
-  EN_REVISION: { label: "En révision", variant: "violet" },
-  LIVRE: { label: "Livré", variant: "gold" },
+  ANALYSE: { label: "Analyse", variant: "neutral" },
+  DEVELOPPEMENT: { label: "Développement", variant: "cyan" },
+  TESTS: { label: "Tests", variant: "violet" },
+  LIVRAISON: { label: "Livraison", variant: "gold" },
   MAINTENANCE: { label: "Maintenance", variant: "danger" },
 };
+
+export const PROJECT_STATUS_ORDER = ["ANALYSE", "DEVELOPPEMENT", "TESTS", "LIVRAISON", "MAINTENANCE"] as const;

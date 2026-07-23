@@ -4,7 +4,7 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { requireRole } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { createSupabaseAdminClient } from "@/lib/supabase/admin";
+import { createClientUser } from "@/lib/clients/create";
 
 const createClientSchema = z.object({
   email: z.string().email("Adresse email invalide"),
@@ -34,30 +34,61 @@ export async function createClientAccount(
     return { error: parsed.error.issues[0].message };
   }
 
-  const { email, password, fullName, companyName, phone } = parsed.data;
-
-  const supabaseAdmin = createSupabaseAdminClient();
-  const { data: authData, error: authError } = await supabaseAdmin.auth.admin.createUser({
-    email,
-    password,
-    email_confirm: true,
-  });
-
-  if (authError || !authData.user) {
-    return { error: authError?.message ?? "Impossible de créer le compte Supabase Auth." };
-  }
-
-  try {
-    await db.user.create({
-      data: { id: authData.user.id, email, fullName, role: "CLIENT", companyName, phone },
-    });
-  } catch (err) {
-    // La fiche métier a échoué : on supprime le compte Auth orphelin pour ne pas
-    // laisser un identifiant "vivant" sans ligne User correspondante.
-    await supabaseAdmin.auth.admin.deleteUser(authData.user.id);
-    return { error: "Cet email a déjà une fiche client, ou une erreur base de données est survenue." };
-  }
+  const result = await createClientUser(parsed.data);
+  if (!result.ok) return { error: result.error };
 
   revalidatePath("/admin/clients");
+  return { success: true };
+}
+
+const convertLeadSchema = z.object({
+  leadId: z.string().min(1),
+  password: z.string().min(8, "Le mot de passe doit contenir au moins 8 caractères"),
+});
+
+export type ConvertLeadState = { error?: string; success?: boolean };
+
+export async function convertLeadToClient(
+  _prevState: ConvertLeadState,
+  formData: FormData
+): Promise<ConvertLeadState> {
+  const user = await requireRole(["ADMIN", "TEAM"]);
+
+  const parsed = convertLeadSchema.safeParse({
+    leadId: formData.get("leadId"),
+    password: formData.get("password"),
+  });
+  if (!parsed.success) {
+    return { error: parsed.error.issues[0].message };
+  }
+
+  const lead = await db.lead.findUnique({ where: { id: parsed.data.leadId } });
+  if (!lead) return { error: "Prospect introuvable" };
+  if (lead.convertedClientId) return { error: "Ce prospect est déjà converti en client" };
+
+  const result = await createClientUser({
+    email: lead.email,
+    password: parsed.data.password,
+    fullName: lead.fullName,
+    companyName: lead.company ?? undefined,
+    phone: lead.phone ?? undefined,
+  });
+  if (!result.ok) return { error: result.error };
+
+  await db.$transaction([
+    db.lead.update({ where: { id: lead.id }, data: { convertedClientId: result.userId } }),
+    db.leadActivity.create({
+      data: {
+        leadId: lead.id,
+        type: "NOTE",
+        content: `Converti en client par ${user.fullName}.`,
+        authorId: user.id,
+      },
+    }),
+  ]);
+
+  revalidatePath("/admin/clients");
+  revalidatePath("/admin/crm");
+  revalidatePath(`/admin/crm/${lead.id}`);
   return { success: true };
 }

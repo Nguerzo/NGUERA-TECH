@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import LogoMark from "@/components/Logo";
 import { loginAction, type LoginState } from "./actions";
 
@@ -66,7 +67,7 @@ export default function LoginPage() {
 
         <p className="form-note" style={{ marginTop: 20 }}>
           Pas encore de compte ? Les accès sont créés par notre équipe après signature du devis.
-          Contactez-nous depuis <a href="/fr/contact" style={{ color: "var(--gold)" }}>la page contact</a>.
+          Contactez-nous depuis <Link href="/fr/contact" style={{ color: "var(--gold)" }}>la page contact</Link>.
         </p>
       </motion.div>
     </main>

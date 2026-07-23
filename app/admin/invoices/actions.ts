@@ -4,6 +4,7 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { requireRole } from "@/lib/auth";
 import { db } from "@/lib/db";
+import type { InvoiceStatus } from "@prisma/client";
 
 const INVOICE_STATUSES = ["BROUILLON", "ENVOYEE", "PAYEE", "EN_RETARD"] as const;
 
@@ -74,4 +75,23 @@ export async function createInvoice(
   }
 
   return { error: "Impossible de générer un numéro de facture unique, réessayez." };
+}
+
+export type ActionResult = { ok: true } | { ok: false; error: string };
+
+export async function updateInvoiceStatus(invoiceId: string, status: InvoiceStatus): Promise<ActionResult> {
+  await requireRole(["ADMIN", "TEAM"]);
+
+  if (!INVOICE_STATUSES.includes(status)) {
+    return { ok: false, error: "Statut invalide" };
+  }
+
+  await db.invoice.update({
+    where: { id: invoiceId },
+    data: { status, paidAt: status === "PAYEE" ? new Date() : null },
+  });
+
+  revalidatePath("/admin/invoices");
+  revalidatePath(`/admin/invoices/${invoiceId}`);
+  return { ok: true };
 }

@@ -20,7 +20,7 @@ export default async function DashboardPage() {
     db.invoice.findMany({ where: invoiceFilter, orderBy: { dueDate: "asc" } }),
   ]);
 
-  const enCours = projects.filter((p) => p.status === "EN_COURS").length;
+  const enCours = projects.filter((p) => ["ANALYSE", "DEVELOPPEMENT", "TESTS"].includes(p.status)).length;
   const enRetard = invoices.filter((i) => i.status === "EN_RETARD").length;
   const totalDu = invoices
     .filter((i) => i.status !== "PAYEE")
@@ -29,7 +29,7 @@ export default async function DashboardPage() {
   return (
     <div>
       <div className="section-head" style={{ marginBottom: 32 }}>
-        <span className="kicker">Vue d'ensemble</span>
+        <span className="kicker">Vue d&apos;ensemble</span>
         <h2>Bonjour {user.fullName.split(" ")[0]}.</h2>
       </div>
 
@@ -49,7 +49,7 @@ export default async function DashboardPage() {
       </div>
 
       {projects.length === 0 ? (
-        <EmptyState icon={FolderOpen}>Aucun projet pour le moment. Il apparaîtra ici dès qu'il sera créé côté administration.</EmptyState>
+        <EmptyState icon={FolderOpen}>Aucun projet pour le moment. Il apparaîtra ici dès qu&apos;il sera créé côté administration.</EmptyState>
       ) : (
         <div className="dash-panel" style={{ overflow: "hidden" }}>
           {projects.map((p, i) => (

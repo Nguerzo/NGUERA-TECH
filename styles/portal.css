@@ -1,0 +1,80 @@
+/* Internal portal design system (Shadcn UI + Tailwind) — loaded ONLY by the
+   authenticated admin/team portal layouts. The public marketing site has its
+   own hand-written design system in app/globals.css and never imports this
+   file, so the two never interfere with each other. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 6%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 6%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 6%;
+
+    --primary: 225 100% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 199 100% 78%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 225 100% 62%;
+
+    --radius: 0.65rem;
+  }
+
+  .dark {
+    --background: 222 47% 5%;
+    --foreground: 210 20% 96%;
+
+    --card: 222 40% 7%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 222 40% 7%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 225 100% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 30% 12%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 222 30% 12%;
+    --muted-foreground: 218 12% 65%;
+
+    --accent: 199 100% 78%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 25% 16%;
+    --input: 222 25% 16%;
+    --ring: 225 100% 62%;
+  }
+
+  .portal-root * {
+    border-color: hsl(var(--border));
+  }
+  .portal-root {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}

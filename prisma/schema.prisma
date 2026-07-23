@@ -20,10 +20,10 @@ enum Role {
 }
 
 enum ProjectStatus {
-  DEVIS
-  EN_COURS
-  EN_REVISION
-  LIVRE
+  ANALYSE
+  DEVELOPPEMENT
+  TESTS
+  LIVRAISON
   MAINTENANCE
 }
 
@@ -47,13 +47,20 @@ model User {
   createdAt   DateTime  @default(now())
   projects    Project[]
   invoices    Invoice[]
+
+  // Portail interne (phase 5)
+  leadActivities    LeadActivity[]
+  leadAttachments   LeadAttachment[]
+  convertedFromLead Lead?            @relation("LeadConvertedClient")
+  quotes            Quote[]          @relation("QuoteClient")
+  quotesCreated     Quote[]          @relation("QuoteCreatedBy")
 }
 
 model Project {
   id            String        @id @default(uuid())
   title         String
   description   String
-  status        ProjectStatus @default(DEVIS)
+  status        ProjectStatus @default(ANALYSE)
   client        User          @relation(fields: [clientId], references: [id])
   clientId      String
   budgetEstime  Decimal?
@@ -61,9 +68,50 @@ model Project {
   dateLivraison DateTime?
   documents     Document[]
   invoices      Invoice[]
+  quotes        Quote[]
   createdAt     DateTime      @default(now())
 
   @@index([clientId])
+}
+
+enum QuoteStatus {
+  BROUILLON
+  ENVOYE
+  ACCEPTE
+  REFUSE
+  EXPIRE
+}
+
+model Quote {
+  id          String      @id @default(uuid())
+  number      String      @unique
+  client      User        @relation("QuoteClient", fields: [clientId], references: [id])
+  clientId    String
+  project     Project?    @relation(fields: [projectId], references: [id])
+  projectId   String?
+  status      QuoteStatus @default(BROUILLON)
+  currency    String      @default("GBP")
+  validUntil  DateTime?
+  notes       String?
+  items       QuoteItem[]
+  createdBy   User        @relation("QuoteCreatedBy", fields: [createdById], references: [id])
+  createdById String
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@index([clientId])
+}
+
+model QuoteItem {
+  id          String  @id @default(uuid())
+  quote       Quote   @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  quoteId     String
+  description String
+  quantity    Decimal @default(1)
+  unitPrice   Decimal
+  position    Int     @default(0)
+
+  @@index([quoteId])
 }
 
 model Invoice {
@@ -98,11 +146,13 @@ model Document {
 // Phase 4 — capture des prospects (formulaire de contact public).
 // Écrit uniquement depuis app/actions/lead.ts (Server Action, clé DATABASE_URL
 // côté serveur) — jamais depuis le navigateur.
+// Phase 5 (portail interne) : pipeline CRM complet — voir LeadActivity/LeadAttachment.
 enum LeadStatus {
   NOUVEAU
-  A_CONTACTER
+  CONTACTE
   QUALIFIE
   PROPOSITION_ENVOYEE
+  NEGOCIATION
   GAGNE
   PERDU
 }
@@ -132,12 +182,59 @@ model Lead {
   status             LeadStatus @default(NOUVEAU)
   confirmationEmailSentAt DateTime?
   adminNotifiedAt    DateTime?
+  convertedClientId  String?    @unique
+  convertedClient    User?      @relation("LeadConvertedClient", fields: [convertedClientId], references: [id])
   createdAt          DateTime   @default(now())
   updatedAt          DateTime   @updatedAt
+
+  activities  LeadActivity[]
+  attachments LeadAttachment[]
 
   @@index([email])
   @@index([status])
   @@index([createdAt])
+}
+
+enum LeadActivityType {
+  NOTE
+  STATUS_CHANGE
+  ATTACHMENT
+}
+
+// Historique unifié d'un prospect : notes manuelles + changements de statut +
+// ajouts de pièces jointes, dans l'ordre chronologique — une seule timeline
+// à afficher plutôt que plusieurs listes séparées.
+model LeadActivity {
+  id        String           @id @default(uuid())
+  lead      Lead             @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  leadId    String
+  type      LeadActivityType
+  content   String?
+  oldStatus LeadStatus?
+  newStatus LeadStatus?
+  author    User             @relation(fields: [authorId], references: [id])
+  authorId  String
+  createdAt DateTime         @default(now())
+
+  @@index([leadId, createdAt])
+}
+
+// Fichiers liés à un prospect (devis reçu, brief, pièce d'identité pour la
+// conformité...). Stockage réel dans le bucket Supabase Storage
+// "lead-attachments" — cette table ne garde que les métadonnées.
+model LeadAttachment {
+  id           String   @id @default(uuid())
+  lead         Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  leadId       String
+  fileName     String
+  filePath     String
+  fileSize     Int
+  contentType  String
+  uploadedBy   User     @relation(fields: [uploadedById], references: [id])
+  uploadedById String
+  createdAt    DateTime @default(now())
+
+  @@index([leadId])
 }
 
 // Journal de toutes les tentatives de soumission (réussies ou non) — sert au

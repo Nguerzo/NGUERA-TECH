@@ -4,14 +4,15 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { requireRole } from "@/lib/auth";
 import { db } from "@/lib/db";
+import type { ProjectStatus } from "@prisma/client";
 
-const PROJECT_STATUSES = ["DEVIS", "EN_COURS", "EN_REVISION", "LIVRE", "MAINTENANCE"] as const;
+const PROJECT_STATUSES = ["ANALYSE", "DEVELOPPEMENT", "TESTS", "LIVRAISON", "MAINTENANCE"] as const;
 
 const createProjectSchema = z.object({
   clientId: z.string().min(1, "Sélectionnez un client"),
   title: z.string().min(2, "Titre requis"),
   description: z.string().min(1, "Description requise"),
-  status: z.enum(PROJECT_STATUSES).default("DEVIS"),
+  status: z.enum(PROJECT_STATUSES).default("ANALYSE"),
   budgetEstime: z.coerce.number().positive().or(z.literal("").transform(() => undefined)),
   dateDebut: z.string().optional(),
   dateLivraison: z.string().optional(),
@@ -60,4 +61,20 @@ export async function createProject(
 
   revalidatePath("/admin/projects");
   return { success: true };
+}
+
+export type ActionResult = { ok: true } | { ok: false; error: string };
+
+export async function updateProjectStatus(projectId: string, status: ProjectStatus): Promise<ActionResult> {
+  await requireRole(["ADMIN", "TEAM"]);
+
+  if (!PROJECT_STATUSES.includes(status)) {
+    return { ok: false, error: "Statut invalide" };
+  }
+
+  await db.project.update({ where: { id: projectId }, data: { status } });
+
+  revalidatePath("/admin/projects");
+  revalidatePath(`/admin/projects/${projectId}`);
+  return { ok: true };
 }

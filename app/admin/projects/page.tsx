@@ -1,62 +1,53 @@
+import Link from "next/link";
 import { db } from "@/lib/db";
-import ProjectForm from "./ProjectForm";
-import { FolderKanban } from "lucide-react";
-import Badge from "@/components/dashboard/Badge";
-import EmptyState from "@/components/dashboard/EmptyState";
-import { FadeInList, FadeInItem } from "@/components/dashboard/FadeIn";
-import { PROJECT_STATUS } from "@/lib/statusMaps";
+import { Card, CardContent } from "@/components/ui/card";
+import { NewProjectDialog } from "@/components/portal/projects/NewProjectDialog";
+import { ProjectStatusSelect } from "@/components/portal/projects/ProjectStatusSelect";
+
+export const metadata = { title: "Projets — Portail NGUERA SENEGALENSIS TECH" };
+export const dynamic = "force-dynamic";
 
 export default async function AdminProjectsPage() {
   const [projects, clients] = await Promise.all([
     db.project.findMany({ orderBy: { createdAt: "desc" }, include: { client: true } }),
-    db.user.findMany({ where: { role: "CLIENT" }, orderBy: { fullName: "asc" } }),
+    db.user.findMany({ where: { role: "CLIENT" }, orderBy: { fullName: "asc" }, select: { id: true, fullName: true, email: true } }),
   ]);
 
   return (
-    <div>
-      <div className="section-head" style={{ marginBottom: 40 }}>
-        <span className="kicker">Back-office</span>
-        <h2>Projets</h2>
-      </div>
-
-      <div className="dash-panel" style={{ padding: 32, marginBottom: 48, maxWidth: 640 }}>
-        <h3 style={{ fontFamily: "var(--display)", fontSize: 17, fontWeight: 600, marginBottom: 20 }}>
-          Nouveau projet
-        </h3>
-        {clients.length === 0 ? (
-          <p style={{ color: "var(--ivory-faint)", fontSize: 14 }}>
-            Créez d'abord un client avant de pouvoir lui associer un projet.
-          </p>
-        ) : (
-          <ProjectForm clients={clients} />
-        )}
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Portail interne</p>
+          <h1 className="font-display text-2xl font-semibold tracking-tight">Projets</h1>
+        </div>
+        <NewProjectDialog clients={clients} />
       </div>
 
       {projects.length === 0 ? (
-        <EmptyState icon={FolderKanban}>Aucun projet pour le moment.</EmptyState>
+        <div className="rounded-lg border border-dashed py-16 text-center text-sm text-muted-foreground">
+          {clients.length === 0
+            ? "Créez d'abord un client avant de pouvoir lui associer un projet."
+            : "Aucun projet pour le moment."}
+        </div>
       ) : (
-        <FadeInList style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        <div className="space-y-3">
           {projects.map((p) => (
-            <FadeInItem key={p.id}>
-              <div className="dash-panel" style={{ padding: 28 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 20 }}>
-                  <div>
-                    <h3 style={{ fontFamily: "var(--display)", fontSize: 19, fontWeight: 600, marginBottom: 6 }}>
-                      {p.title}
-                    </h3>
-                    <p style={{ fontSize: 13, color: "var(--ivory-faint)" }}>
-                      {p.client.fullName} — {p.client.email}
-                    </p>
-                  </div>
-                  <Badge variant={PROJECT_STATUS[p.status]?.variant ?? "neutral"}>
-                    {PROJECT_STATUS[p.status]?.label ?? p.status}
-                  </Badge>
+            <Card key={p.id}>
+              <CardContent className="flex items-start justify-between gap-4 p-4">
+                <div className="min-w-0 flex-1">
+                  <Link href={`/admin/projects/${p.id}`} className="text-sm font-medium hover:text-primary">
+                    {p.title}
+                  </Link>
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    {p.client.fullName} — {p.client.email}
+                  </p>
+                  <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{p.description}</p>
                 </div>
-                <p style={{ fontSize: 14, color: "var(--ivory-dim)", maxWidth: 520, marginTop: 14 }}>{p.description}</p>
-              </div>
-            </FadeInItem>
+                <ProjectStatusSelect projectId={p.id} initialStatus={p.status} />
+              </CardContent>
+            </Card>
           ))}
-        </FadeInList>
+        </div>
       )}
     </div>
   );

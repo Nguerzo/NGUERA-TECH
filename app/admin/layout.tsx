@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import "@/styles/portal.css";
 import { requireRole } from "@/lib/auth";
-import AdminSidebar from "@/components/AdminSidebar";
+import { ThemeProvider } from "@/components/portal/ThemeProvider";
+import { Toaster } from "@/components/ui/sonner";
+import PortalShell from "@/components/portal/PortalShell";
 
 export const metadata: Metadata = {
-  title: "Back-office — NGUERA SENEGALENSIS TECH",
-  description: "Gestion des clients, projets et factures.",
+  title: "Portail — NGUERA SENEGALENSIS TECH",
+  description: "Plateforme interne : CRM, projets, devis, facturation.",
 };
 
 // Toujours dynamique (auth + données par utilisateur) : évite que `next build`
@@ -12,13 +15,17 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  // Seuls ADMIN et TEAM peuvent gérer clients/projets/factures.
+  // Seuls ADMIN et TEAM accèdent au portail interne.
   const user = await requireRole(["ADMIN", "TEAM"]);
 
   return (
-    <div className="dash-shell">
-      <AdminSidebar userName={user.fullName} userRole={user.role} />
-      <main className="dash-main">{children}</main>
-    </div>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+      <div className="portal-root min-h-screen">
+        <PortalShell userName={user.fullName} userRole={user.role}>
+          {children}
+        </PortalShell>
+      </div>
+      <Toaster />
+    </ThemeProvider>
   );
 }
